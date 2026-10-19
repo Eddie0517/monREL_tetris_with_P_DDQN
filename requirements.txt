@@ -1,0 +1,11 @@
+# Core Machine Learning & RL
+torch>=2.0.0
+numpy>=1.24.0
+
+# Tracking & Visualization
+tensorboard>=2.13.0
+matplotlib>=3.7.0
+
+# Optional GUI & Simulation
+pygame>=2.5.0
+gymnasium>=0.29.0

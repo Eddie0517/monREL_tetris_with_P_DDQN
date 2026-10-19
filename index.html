@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Cyber Tetris - Trò Chơi Xếp Gạch Hiện Đại</title>
+  <meta name="description" content="Trải nghiệm trò chơi Tetris cổ điển với phong cách Cyberpunk hiện đại, âm thanh arcade sống động và hiệu ứng đồ họa đẹp mắt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="grid-overlay"></div>
+
+  <div class="main-wrapper">
+    <!-- Header -->
+    <header class="game-header">
+      <div class="logo-container">
+        <h1 class="logo-title">CYBER<span class="neon-text">TETRIS</span></h1>
+        <span class="badge">PRO EDITION</span>
+      </div>
+      <div class="header-actions">
+        <button id="btn-sound" class="icon-btn" title="Bật/Tắt âm thanh" aria-label="Âm thanh">
+          <svg id="icon-sound-on" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="icon-sound-off" class="btn-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+        <button id="btn-music" class="icon-btn" title="Bật/Tắt nhạc nền" aria-label="Nhạc nền">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </button>
+        <button id="btn-help" class="icon-btn" title="Hướng dẫn phím tắt" aria-label="Hướng dẫn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Game Container -->
+    <main class="game-container">
+      <!-- Left Panel: Hold & Stats -->
+      <aside class="side-panel left-panel">
+        <div class="panel-card glass-box">
+          <h2 class="panel-title">GIỮ (HOLD)</h2>
+          <div class="mini-canvas-container">
+            <canvas id="hold-canvas" width="120" height="120"></canvas>
+          </div>
+          <span class="panel-hint">Nhấn <kbd>C</kbd> hoặc <kbd>Shift</kbd></span>
+        </div>
+
+        <div class="panel-card glass-box stats-card">
+          <div class="stat-item">
+            <span class="stat-label">CẤP ĐỘ</span>
+            <span id="level-display" class="stat-value neon-cyan">1</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">HÀNG ĐÃ ĂN</span>
+            <span id="lines-display" class="stat-value neon-amber">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">ĐIỂM KỶ LỤC</span>
+            <span id="highscore-display" class="stat-value neon-purple">0</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center: Main Tetris Board -->
+      <section class="board-section">
+        <div class="board-wrapper glass-box">
+          <div class="score-banner">
+            <span class="score-label">ĐIỂM SỐ</span>
+            <span id="score-display" class="score-number">0</span>
+          </div>
+          <div class="canvas-relative">
+            <canvas id="tetris-canvas" width="300" height="600"></canvas>
+            <canvas id="effects-canvas" width="300" height="600"></canvas>
+
+            <!-- Overlay for Pause / Game Over -->
+            <div id="game-overlay" class="game-overlay hidden">
+              <div class="overlay-content">
+                <h2 id="overlay-title" class="overlay-title">TẠM DỪNG</h2>
+                <p id="overlay-desc" class="overlay-desc">Nhấn tiếp tục để tiếp tục màn chơi</p>
+                <div class="overlay-stats hidden" id="overlay-stats">
+                  <div class="final-stat">
+                    <span>Điểm đạt được:</span>
+                    <strong id="final-score" class="neon-cyan">0</strong>
+                  </div>
+                  <div class="final-stat">
+                    <span>Số hàng dọn:</span>
+                    <strong id="final-lines" class="neon-amber">0</strong>
+                  </div>
+                  <div class="final-stat">
+                    <span>Cấp độ tối đa:</span>
+                    <strong id="final-level" class="neon-purple">1</strong>
+                  </div>
+                </div>
+                <div class="overlay-buttons">
+                  <button id="btn-overlay-action" class="btn btn-primary">BẮT ĐẦU</button>
+                  <button id="btn-overlay-restart" class="btn btn-secondary">CHƠI LẠI</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Panel: Next Pieces & Quick Control Info -->
+      <aside class="side-panel right-panel">
+        <div class="panel-card glass-box">
+          <h2 class="panel-title">TIẾP THEO</h2>
+          <div class="next-pieces-list">
+            <div class="mini-canvas-container next-item">
+              <canvas id="next-1-canvas" width="100" height="80"></canvas>
+            </div>
+            <div class="mini-canvas-container next-item secondary">
+              <canvas id="next-2-canvas" width="80" height="64"></canvas>
+            </div>
+            <div class="mini-canvas-container next-item tertiary">
+              <canvas id="next-3-canvas" width="80" height="64"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card glass-box game-status-card">
+          <div class="status-indicator">
+            <span class="status-dot active"></span>
+            <span id="game-status-text">SẴN SÀNG</span>
+          </div>
+          <button id="btn-ai-play" class="btn btn-control btn-ai">🤖 BẬT AI AUTOPLAY</button>
+          <button id="btn-pause" class="btn btn-control">TẠM DỪNG (P)</button>
+          <button id="btn-restart" class="btn btn-control btn-danger-soft">CHƠI MỚI (R)</button>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Mobile / Touch Controls -->
+    <div class="mobile-controls">
+      <div class="control-cluster-left">
+        <button id="ctrl-hold" class="touch-btn" aria-label="Hold">
+          <span>HOLD</span>
+        </button>
+        <button id="ctrl-left" class="touch-btn" aria-label="Di chuyển trái">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button id="ctrl-right" class="touch-btn" aria-label="Di chuyển phải">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+      </div>
+
+      <div class="control-cluster-center">
+        <button id="ctrl-down" class="touch-btn" aria-label="Rơi chậm">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+        <button id="ctrl-hard-drop" class="touch-btn touch-btn-accent" aria-label="Thả nhanh tức thì">
+          <span>DROP</span>
+        </button>
+      </div>
+
+      <div class="control-cluster-right">
+        <button id="ctrl-rotate-ccw" class="touch-btn" aria-label="Xoay ngược chiều kim đồng hồ">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+        </button>
+        <button id="ctrl-rotate-cw" class="touch-btn touch-btn-rotate" aria-label="Xoay theo chiều kim đồng hồ">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 8c2.65 0 5.05.99 6.9 2.6L22 7v9h-9l3.62-3.62C15.23 11.22 13.46 10.5 11.5 10.5c-3.54 0-6.55 2.31-7.6 5.5l-2.37-.78C2.92 11.03 6.85 8 11.5 8z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Help / Controls Modal -->
+    <div id="help-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-dialog glass-box">
+        <div class="modal-header">
+          <h2>HƯỚNG DẪN ĐIỀU KHIỂN</h2>
+          <button id="btn-close-help" class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="key-guide-grid">
+            <div class="guide-row">
+              <span class="action-name">Di chuyển trái / phải</span>
+              <div class="key-tags">
+                <kbd>←</kbd> <kbd>→</kbd> hoặc <kbd>A</kbd> <kbd>D</kbd>
+              </div>
+            </div>
+            <div class="guide-row">
+              <span class="action-name">Xoay khối (Chiều kim đồng hồ)</span>
+              <div class="key-tags">
+                <kbd>↑</kbd> hoặc <kbd>W</kbd> / <kbd>X</kbd>
+              </div>
+            </div>
+            <div class="guide-row">
+              <span class="action-name">Xoay ngược chiều</span>
+              <div class="key-tags">
+                <kbd>Z</kbd> hoặc <kbd>Ctrl</kbd>
+              </div>
+            </div>
+            <div class="guide-row">
+              <span class="action-name">Thả rơi chậm (Soft Drop)</span>
+              <div class="key-tags">
+                <kbd>↓</kbd> hoặc <kbd>S</kbd>
+              </div>
+            </div>
+            <div class="guide-row">
+              <span class="action-name">Thả rơi tức thì (Hard Drop)</span>
+              <div class="key-tags">
+                <kbd>Space</kbd>
+              </div>
+            </div>
+            <div class="guide-row">
+              <span class="action-name">Giữ khối (Hold Piece)</span>
+              <div class="key-tags">
+                <kbd>C</kbd> hoặc <kbd>Shift</kbd>
+              </div>
+            </div>
+            <div class="guide-row">
+              <span class="action-name">Tạm dừng / Tiếp tục</span>
+              <div class="key-tags">
+                <kbd>P</kbd> hoặc <kbd>Esc</kbd>
+              </div>
+            </div>
+            <div class="guide-row">
+              <span class="action-name">Chơi ván mới</span>
+              <div class="key-tags">
+                <kbd>R</kbd>
+              </div>
+            </div>
+          </div>
+          <div class="scoring-info">
+            <h3>Cách tính điểm:</h3>
+            <ul>
+              <li><strong>1 Hàng (Single):</strong> 100 × Level</li>
+              <li><strong>2 Hàng (Double):</strong> 300 × Level</li>
+              <li><strong>3 Hàng (Triple):</strong> 500 × Level</li>
+              <li><strong>4 Hàng (TETRIS):</strong> 800 × Level</li>
+              <li><strong>Hard drop:</strong> +2 điểm mỗi ô rơi</li>
+              <li><strong>Soft drop:</strong> +1 điểm mỗi ô rơi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="audio.js"></script>
+  <script src="tetris.js"></script>
+</body>
+</html>

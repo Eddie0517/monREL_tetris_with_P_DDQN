@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+/env/
+.venv/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Binaries and archives
+tools/*.exe
+*.zip
+
+# Conference Paper & LaTeX (Excluded from coursework repo)
+LaTeX2e+Proceedings+Template+ZIP/
+paper/
+SCOPUS_RESEARCH_ROADMAP.md
+reports/figures/paper_*.png
+
+# Presentation draft scripts (Only FINAL version is uploaded)
+KICH_BAN_THUYET_TRINH_BAO_CAO_TIEN_DO.docx
+KICH_BAN_THUYET_TRINH_BAO_CAO_TIEN_DO_v2.docx
+
+# Office temporary lock files
+~$*
