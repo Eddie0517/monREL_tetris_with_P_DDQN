@@ -1,0 +1,25 @@
+﻿config,seed,ep đầu tiên Avg50≥100,Avg50 cuối,max Avg50
+baseline,0,1360.0,30.0,587.9
+baseline,1,1400.0,570.2,573.7
+baseline,2,1650.0,556.7,565.6
+qlearning,0,1150.0,596.1,596.9
+qlearning,1,1890.0,503.0,503.0
+qlearning,2,1300.0,0.3,597.8
+double_q,0,1200.0,488.0,545.9
+double_q,1,1620.0,180.4,244.0
+double_q,2,1420.0,365.2,597.5
+expected_sarsa,0,1180.0,0.1,594.4
+expected_sarsa,1,1160.0,554.7,596.5
+expected_sarsa,2,1150.0,562.7,597.2
+sarsa_1050,0,,2.1,2.1
+sarsa_1050,1,,1.7,1.8
+sarsa_1050,2,,1.8,1.8
+qlearning_1050,0,,25.6,25.6
+qlearning_1050,1,,0.6,0.6
+qlearning_1050,2,,2.6,2.6
+double_q_1050,0,,13.8,13.8
+double_q_1050,1,,2.1,2.1
+double_q_1050,2,,1.1,1.1
+expected_sarsa_1050,0,,5.3,5.7
+expected_sarsa_1050,1,,25.4,25.4
+expected_sarsa_1050,2,,23.2,23.2

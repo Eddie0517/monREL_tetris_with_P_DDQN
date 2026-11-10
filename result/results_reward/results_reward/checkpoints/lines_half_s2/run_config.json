@@ -1,0 +1,38 @@
+{
+  "reward_weights": {
+    "alive": 1.0,
+    "lines": 5.0,
+    "holes": 1.5,
+    "bumpiness": 0.5,
+    "height": 0.5,
+    "game_over_penalty": 10.0
+  },
+  "args": {
+    "episodes": 2000,
+    "batch_size": 512,
+    "hidden_dim": 64,
+    "lr": 0.001,
+    "gamma": 0.99,
+    "memory_size": 30000,
+    "initial_epsilon": 1.0,
+    "min_epsilon": 0.001,
+    "decay_episodes": 1200,
+    "target_update_freq": 10,
+    "log_freq": 50,
+    "save_freq": 2001,
+    "checkpoint_dir": "/kaggle/working/results_reward/checkpoints/lines_half_s2",
+    "log_dir": "/kaggle/working/results_reward/logs/lines_half_s2",
+    "device": "cpu",
+    "resume": null,
+    "no_tensorboard": false,
+    "seed": 2,
+    "max_episode_steps": 1500,
+    "run_name": "lines_half_s2",
+    "r_alive": 1.0,
+    "r_lines": 5.0,
+    "r_holes": 1.5,
+    "r_bumpiness": 0.5,
+    "r_height": 0.5,
+    "r_game_over": 10.0
+  }
+}

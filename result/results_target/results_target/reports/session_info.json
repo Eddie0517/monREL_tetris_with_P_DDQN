@@ -1,0 +1,28 @@
+{
+  "group": "target",
+  "configs": [
+    "baseline",
+    "qlearning",
+    "double_q",
+    "expected_sarsa",
+    "sarsa_1050",
+    "qlearning_1050",
+    "double_q_1050",
+    "expected_sarsa_1050"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "episodes": 2000,
+  "decay_episodes": 1200,
+  "max_episode_steps": 1500,
+  "games": 100,
+  "max_steps": 1000,
+  "eval_seed": 12345,
+  "device": "cuda",
+  "jobs": 4,
+  "restored_runs": [],
+  "session_hours": 5.674497825503349
+}

@@ -1,0 +1,76 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793988489.933182     263 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+TensorBoard logging enabled: /kaggle/working/results_reward/logs/height_0_s1
+=================================================================
+>>> STARTING TETRIS DEEP Q-NETWORK TRAINING
+Device: cpu | Total Episodes: 2000
+Batch Size: 512 | LR: 0.001 | Gamma: 0.99
+Checkpoints: /kaggle/working/results_reward/checkpoints/height_0_s1 | Logs: /kaggle/working/results_reward/logs/height_0_s1
+Reward weights: {'alive': 1.0, 'lines': 10.0, 'holes': 1.5, 'bumpiness': 0.5, 'height': 0.0, 'game_over_penalty': 10.0}
+=================================================================
+Ep    1/2000 | Lines:    0 (Avg50:   0.0) | Score:      0 | Steps:   26 | Reward:  -123.5 | Loss: 0.0000 | Eps: 0.999 | Time:   0.0s
+>>> [NEW RECORD] Episode 4: Cleared 1 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+>>> [NEW RECORD] Episode 9: Cleared 2 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep   50/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   20 | Reward:  -140.0 | Loss: 8.5163 | Eps: 0.958 | Time:   4.7s
+Ep  100/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   23 | Reward:  -123.5 | Loss: 8.9724 | Eps: 0.917 | Time:  11.3s
+Ep  150/2000 | Lines:    1 (Avg50:   0.1) | Score:     40 | Steps:   32 | Reward:   -80.0 | Loss: 9.9075 | Eps: 0.875 | Time:  18.0s
+Ep  200/2000 | Lines:    0 (Avg50:   0.3) | Score:      0 | Steps:   28 | Reward:  -108.5 | Loss: 11.5036 | Eps: 0.834 | Time:  25.2s
+Ep  250/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   29 | Reward:  -104.5 | Loss: 13.4328 | Eps: 0.792 | Time:  32.2s
+Ep  300/2000 | Lines:    0 (Avg50:   0.2) | Score:      0 | Steps:   31 | Reward:   -88.5 | Loss: 14.2730 | Eps: 0.750 | Time:  39.5s
+Ep  350/2000 | Lines:    0 (Avg50:   0.2) | Score:      0 | Steps:   29 | Reward:   -97.0 | Loss: 13.6321 | Eps: 0.709 | Time:  46.9s
+Ep  400/2000 | Lines:    0 (Avg50:   0.2) | Score:      0 | Steps:   27 | Reward:   -84.0 | Loss: 11.9911 | Eps: 0.667 | Time:  54.5s
+Ep  450/2000 | Lines:    1 (Avg50:   0.3) | Score:     40 | Steps:   31 | Reward:   -88.5 | Loss: 11.7880 | Eps: 0.625 | Time:  62.3s
+>>> [NEW RECORD] Episode 499: Cleared 4 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep  500/2000 | Lines:    0 (Avg50:   0.5) | Score:      0 | Steps:   30 | Reward:   -80.0 | Loss: 11.9831 | Eps: 0.584 | Time:  70.3s
+Ep  550/2000 | Lines:    1 (Avg50:   0.6) | Score:     40 | Steps:   33 | Reward:   -63.5 | Loss: 11.9713 | Eps: 0.542 | Time:  78.7s
+Ep  600/2000 | Lines:    1 (Avg50:   0.6) | Score:     40 | Steps:   39 | Reward:   -31.5 | Loss: 12.5474 | Eps: 0.500 | Time:  87.4s
+Ep  650/2000 | Lines:    0 (Avg50:   0.6) | Score:      0 | Steps:   27 | Reward:  -118.0 | Loss: 13.9668 | Eps: 0.459 | Time:  96.8s
+>>> [NEW RECORD] Episode 666: Cleared 5 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep  700/2000 | Lines:    1 (Avg50:   0.9) | Score:     40 | Steps:   39 | Reward:   -29.0 | Loss: 15.1599 | Eps: 0.417 | Time: 106.2s
+>>> [NEW RECORD] Episode 733: Cleared 6 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep  750/2000 | Lines:    0 (Avg50:   1.0) | Score:      0 | Steps:   33 | Reward:   -69.0 | Loss: 17.5960 | Eps: 0.376 | Time: 116.1s
+Ep  800/2000 | Lines:    2 (Avg50:   1.0) | Score:     80 | Steps:   47 | Reward:     9.5 | Loss: 20.9910 | Eps: 0.334 | Time: 126.3s
+Ep  850/2000 | Lines:    1 (Avg50:   0.9) | Score:     40 | Steps:   38 | Reward:   -43.0 | Loss: 24.8167 | Eps: 0.292 | Time: 136.9s
+Ep  900/2000 | Lines:    4 (Avg50:   1.1) | Score:    180 | Steps:   50 | Reward:    50.5 | Loss: 29.6803 | Eps: 0.251 | Time: 147.9s
+Ep  950/2000 | Lines:    0 (Avg50:   1.0) | Score:      0 | Steps:   39 | Reward:   -34.0 | Loss: 34.8260 | Eps: 0.209 | Time: 159.4s
+Ep 1000/2000 | Lines:    0 (Avg50:   1.2) | Score:      0 | Steps:   39 | Reward:   -36.0 | Loss: 40.5278 | Eps: 0.167 | Time: 171.1s
+Ep 1050/2000 | Lines:    4 (Avg50:   1.7) | Score:    180 | Steps:   52 | Reward:    68.0 | Loss: 42.8033 | Eps: 0.126 | Time: 183.3s
+>>> [NEW RECORD] Episode 1091: Cleared 16 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1100/2000 | Lines:    5 (Avg50:   2.4) | Score:    200 | Steps:   52 | Reward:    39.0 | Loss: 44.0962 | Eps: 0.084 | Time: 196.2s
+Ep 1150/2000 | Lines:    2 (Avg50:   2.4) | Score:     80 | Steps:   42 | Reward:    -8.0 | Loss: 43.1408 | Eps: 0.043 | Time: 209.3s
+Ep 1200/2000 | Lines:    3 (Avg50:   4.2) | Score:    120 | Steps:   49 | Reward:    35.5 | Loss: 40.9168 | Eps: 0.001 | Time: 223.8s
+Ep 1250/2000 | Lines:   14 (Avg50:   3.4) | Score:    640 | Steps:   78 | Reward:   255.5 | Loss: 40.6202 | Eps: 0.001 | Time: 237.7s
+>>> [NEW RECORD] Episode 1299: Cleared 17 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1300/2000 | Lines:   12 (Avg50:   6.1) | Score:    700 | Steps:   73 | Reward:   247.5 | Loss: 36.3375 | Eps: 0.001 | Time: 253.5s
+>>> [NEW RECORD] Episode 1315: Cleared 47 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+>>> [NEW RECORD] Episode 1344: Cleared 51 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+>>> [NEW RECORD] Episode 1346: Cleared 83 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1350/2000 | Lines:   28 (Avg50:  13.2) | Score:   2400 | Steps:  110 | Reward:   584.5 | Loss: 34.6983 | Eps: 0.001 | Time: 274.5s
+>>> [NEW RECORD] Episode 1356: Cleared 97 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+>>> [NEW RECORD] Episode 1378: Cleared 112 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+>>> [NEW RECORD] Episode 1383: Cleared 199 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1400/2000 | Lines:   23 (Avg50:  44.2) | Score:   2380 | Steps:   94 | Reward:   569.5 | Loss: 28.3882 | Eps: 0.001 | Time: 316.4s
+>>> [NEW RECORD] Episode 1421: Cleared 203 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+>>> [NEW RECORD] Episode 1423: Cleared 592 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1450/2000 | Lines:  254 (Avg50: 152.5) | Score:  26380 | Steps:  678 | Reward:  6750.0 | Loss: 13.5715 | Eps: 0.001 | Time: 433.0s
+>>> [NEW RECORD] Episode 1472: Cleared 594 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1500/2000 | Lines:   63 (Avg50: 284.6) | Score:   4660 | Steps:  200 | Reward:  1407.0 | Loss: 8.9501 | Eps: 0.001 | Time: 645.0s
+>>> [NEW RECORD] Episode 1519: Cleared 595 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+>>> [NEW RECORD] Episode 1522: Cleared 597 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1550/2000 | Lines:  594 (Avg50: 470.2) | Score:  47260 | Steps: 1500 | Reward: 14334.5 | Loss: 7.6284 | Eps: 0.001 | Time: 982.0s
+>>> [NEW RECORD] Episode 1553: Cleared 598 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1600/2000 | Lines:  594 (Avg50: 542.0) | Score:  46460 | Steps: 1500 | Reward: 14532.5 | Loss: 8.7755 | Eps: 0.001 | Time: 1367.8s
+>>> [NEW RECORD] Episode 1636: Cleared 599 lines! Saved to /kaggle/working/results_reward/checkpoints/height_0_s1/best_model.pth
+Ep 1650/2000 | Lines:  593 (Avg50: 565.7) | Score:  45460 | Steps: 1500 | Reward: 14041.5 | Loss: 8.7313 | Eps: 0.001 | Time: 1767.4s
+Ep 1700/2000 | Lines:  597 (Avg50: 585.7) | Score:  42200 | Steps: 1500 | Reward: 14346.5 | Loss: 8.4047 | Eps: 0.001 | Time: 2178.9s
+Ep 1750/2000 | Lines:  596 (Avg50: 581.2) | Score:  42980 | Steps: 1500 | Reward: 14353.0 | Loss: 7.2887 | Eps: 0.001 | Time: 2584.3s
+Ep 1800/2000 | Lines:  594 (Avg50: 568.0) | Score:  46500 | Steps: 1500 | Reward: 14569.5 | Loss: 6.9401 | Eps: 0.001 | Time: 2981.5s
+Ep 1850/2000 | Lines:  597 (Avg50: 569.1) | Score:  44460 | Steps: 1500 | Reward: 14522.0 | Loss: 6.7337 | Eps: 0.001 | Time: 3382.2s
+Ep 1900/2000 | Lines:  593 (Avg50: 510.5) | Score:  51880 | Steps: 1500 | Reward: 14981.0 | Loss: 7.0947 | Eps: 0.001 | Time: 3750.3s
+Ep 1950/2000 | Lines:  591 (Avg50: 569.5) | Score:  38820 | Steps: 1500 | Reward: 13697.0 | Loss: 6.5618 | Eps: 0.001 | Time: 4157.7s
+Ep 2000/2000 | Lines:  597 (Avg50: 550.8) | Score:  48540 | Steps: 1500 | Reward: 14483.0 | Loss: 6.8096 | Eps: 0.001 | Time: 4548.9s
+=================================================================
+SUCCESS: TRAINING FINISHED!
+Best Lines Achieved: 599
+Latest checkpoint saved at: /kaggle/working/results_reward/checkpoints/height_0_s1/latest_model.pth
+=================================================================

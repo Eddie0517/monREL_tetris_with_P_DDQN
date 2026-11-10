@@ -1,0 +1,248 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793982376.786968     192 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+TensorBoard logging enabled: /kaggle/working/results_target/logs/expected_sarsa_s1
+=================================================================
+>>> STARTING TETRIS DEEP Q-NETWORK TRAINING
+Device: cuda | Total Episodes: 2000
+Batch Size: 512 | LR: 0.001 | Gamma: 0.99 | Target: expected_sarsa
+Checkpoints: /kaggle/working/results_target/checkpoints/expected_sarsa_s1 | Logs: /kaggle/working/results_target/logs/expected_sarsa_s1
+Reward weights: {'alive': 1.0, 'lines': 10.0, 'holes': 1.5, 'bumpiness': 0.5, 'height': 0.5, 'game_over_penalty': 10.0}
+=================================================================
+Ep    1/2000 | Lines:    0 (Avg50:   0.0) | Score:      0 | Steps:   26 | Reward:  -221.0 | Loss: 0.0000 | Eps: 0.999 | Time:   0.0s
+>>> [NEW RECORD] Episode 4: Cleared 1 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+>>> [NEW RECORD] Episode 9: Cleared 2 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep   10/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   25 | Reward:  -232.5 | Loss: 0.0000 | Eps: 0.992 | Time:   0.4s
+Ep   20/2000 | Lines:    0 (Avg50:   0.2) | Score:      0 | Steps:   21 | Reward:  -238.0 | Loss: 12.1460 | Eps: 0.983 | Time:   1.4s
+Ep   30/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   26 | Reward:  -218.5 | Loss: 9.0990 | Eps: 0.975 | Time:   2.9s
+Ep   40/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   19 | Reward:  -264.5 | Loss: 8.7395 | Eps: 0.967 | Time:   4.3s
+Ep   50/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   27 | Reward:  -215.0 | Loss: 9.0506 | Eps: 0.958 | Time:   6.0s
+Ep   60/2000 | Lines:    0 (Avg50:   0.0) | Score:      0 | Steps:   30 | Reward:  -187.0 | Loss: 8.4582 | Eps: 0.950 | Time:   7.7s
+Ep   70/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   24 | Reward:  -207.5 | Loss: 8.3826 | Eps: 0.942 | Time:   9.4s
+Ep   80/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   21 | Reward:  -259.0 | Loss: 8.0339 | Eps: 0.933 | Time:  10.9s
+Ep   90/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   26 | Reward:  -218.5 | Loss: 7.5382 | Eps: 0.925 | Time:  12.5s
+Ep  100/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   29 | Reward:  -190.5 | Loss: 7.8685 | Eps: 0.917 | Time:  14.1s
+Ep  110/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   23 | Reward:  -245.0 | Loss: 7.2157 | Eps: 0.908 | Time:  15.6s
+Ep  120/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   28 | Reward:  -210.5 | Loss: 7.3085 | Eps: 0.900 | Time:  17.1s
+Ep  130/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   27 | Reward:  -209.0 | Loss: 7.0592 | Eps: 0.892 | Time:  18.5s
+Ep  140/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   23 | Reward:  -243.0 | Loss: 7.1705 | Eps: 0.883 | Time:  20.2s
+Ep  150/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   27 | Reward:  -208.5 | Loss: 7.2208 | Eps: 0.875 | Time:  22.0s
+Ep  160/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   26 | Reward:  -221.0 | Loss: 6.3750 | Eps: 0.867 | Time:  23.6s
+Ep  170/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   24 | Reward:  -223.0 | Loss: 6.5760 | Eps: 0.858 | Time:  25.3s
+Ep  180/2000 | Lines:    1 (Avg50:   0.2) | Score:     40 | Steps:   27 | Reward:  -206.0 | Loss: 5.7399 | Eps: 0.850 | Time:  27.3s
+Ep  190/2000 | Lines:    0 (Avg50:   0.3) | Score:      0 | Steps:   28 | Reward:  -200.0 | Loss: 6.0256 | Eps: 0.842 | Time:  29.0s
+Ep  200/2000 | Lines:    0 (Avg50:   0.2) | Score:      0 | Steps:   34 | Reward:  -166.0 | Loss: 5.5110 | Eps: 0.834 | Time:  30.7s
+Ep  210/2000 | Lines:    0 (Avg50:   0.2) | Score:      0 | Steps:   27 | Reward:  -217.5 | Loss: 5.1291 | Eps: 0.825 | Time:  32.3s
+Ep  220/2000 | Lines:    0 (Avg50:   0.3) | Score:      0 | Steps:   28 | Reward:  -185.0 | Loss: 5.7657 | Eps: 0.817 | Time:  34.0s
+Ep  230/2000 | Lines:    1 (Avg50:   0.3) | Score:     40 | Steps:   29 | Reward:  -197.0 | Loss: 5.6612 | Eps: 0.809 | Time:  35.8s
+>>> [NEW RECORD] Episode 238: Cleared 3 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  240/2000 | Lines:    0 (Avg50:   0.3) | Score:      0 | Steps:   30 | Reward:  -180.0 | Loss: 5.4543 | Eps: 0.800 | Time:  37.6s
+Ep  250/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   28 | Reward:  -191.0 | Loss: 5.8288 | Eps: 0.792 | Time:  39.6s
+Ep  260/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   29 | Reward:  -189.0 | Loss: 5.6625 | Eps: 0.784 | Time:  41.5s
+Ep  270/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   26 | Reward:  -215.0 | Loss: 5.0471 | Eps: 0.775 | Time:  43.4s
+Ep  280/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   30 | Reward:  -177.0 | Loss: 5.0137 | Eps: 0.767 | Time:  45.5s
+Ep  290/2000 | Lines:    3 (Avg50:   0.5) | Score:    120 | Steps:   40 | Reward:  -142.0 | Loss: 5.0018 | Eps: 0.759 | Time:  47.6s
+Ep  300/2000 | Lines:    1 (Avg50:   0.6) | Score:     40 | Steps:   32 | Reward:  -164.0 | Loss: 5.0768 | Eps: 0.750 | Time:  49.5s
+Ep  310/2000 | Lines:    0 (Avg50:   0.5) | Score:      0 | Steps:   33 | Reward:  -137.0 | Loss: 4.9508 | Eps: 0.742 | Time:  51.3s
+Ep  320/2000 | Lines:    0 (Avg50:   0.5) | Score:      0 | Steps:   27 | Reward:  -216.0 | Loss: 5.0404 | Eps: 0.734 | Time:  53.2s
+Ep  330/2000 | Lines:    1 (Avg50:   0.5) | Score:     40 | Steps:   29 | Reward:  -177.0 | Loss: 5.0605 | Eps: 0.725 | Time:  55.2s
+Ep  340/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   33 | Reward:  -176.5 | Loss: 5.0926 | Eps: 0.717 | Time:  57.0s
+Ep  350/2000 | Lines:    1 (Avg50:   0.4) | Score:     40 | Steps:   33 | Reward:  -179.5 | Loss: 4.9141 | Eps: 0.709 | Time:  58.9s
+Ep  360/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   31 | Reward:  -182.0 | Loss: 4.9622 | Eps: 0.700 | Time:  60.8s
+Ep  370/2000 | Lines:    2 (Avg50:   0.4) | Score:     80 | Steps:   38 | Reward:  -148.0 | Loss: 4.8574 | Eps: 0.692 | Time:  62.6s
+Ep  380/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   26 | Reward:  -218.5 | Loss: 4.5375 | Eps: 0.684 | Time:  64.6s
+Ep  390/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   30 | Reward:  -167.5 | Loss: 4.8248 | Eps: 0.675 | Time:  66.5s
+Ep  400/2000 | Lines:    1 (Avg50:   0.4) | Score:     40 | Steps:   31 | Reward:  -182.5 | Loss: 4.8299 | Eps: 0.667 | Time:  68.5s
+Ep  410/2000 | Lines:    0 (Avg50:   0.5) | Score:      0 | Steps:   32 | Reward:  -182.5 | Loss: 4.8592 | Eps: 0.659 | Time:  70.6s
+>>> [NEW RECORD] Episode 414: Cleared 7 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  420/2000 | Lines:    1 (Avg50:   0.7) | Score:     40 | Steps:   31 | Reward:  -192.0 | Loss: 4.7832 | Eps: 0.650 | Time:  72.6s
+Ep  430/2000 | Lines:    1 (Avg50:   0.7) | Score:     40 | Steps:   34 | Reward:  -155.0 | Loss: 4.7016 | Eps: 0.642 | Time:  74.6s
+Ep  440/2000 | Lines:    2 (Avg50:   0.8) | Score:     80 | Steps:   37 | Reward:  -150.0 | Loss: 4.7914 | Eps: 0.634 | Time:  76.7s
+Ep  450/2000 | Lines:    0 (Avg50:   0.7) | Score:      0 | Steps:   33 | Reward:  -164.0 | Loss: 4.6284 | Eps: 0.625 | Time:  78.8s
+Ep  460/2000 | Lines:    2 (Avg50:   0.7) | Score:     80 | Steps:   37 | Reward:  -157.0 | Loss: 4.5818 | Eps: 0.617 | Time:  81.0s
+Ep  470/2000 | Lines:    2 (Avg50:   0.7) | Score:     80 | Steps:   33 | Reward:  -179.0 | Loss: 4.5876 | Eps: 0.609 | Time:  83.0s
+Ep  480/2000 | Lines:    0 (Avg50:   0.8) | Score:      0 | Steps:   32 | Reward:  -167.5 | Loss: 4.5588 | Eps: 0.600 | Time:  85.0s
+Ep  490/2000 | Lines:    0 (Avg50:   0.7) | Score:      0 | Steps:   26 | Reward:  -220.0 | Loss: 5.1051 | Eps: 0.592 | Time:  86.9s
+Ep  500/2000 | Lines:    1 (Avg50:   0.7) | Score:     40 | Steps:   38 | Reward:  -144.0 | Loss: 5.1986 | Eps: 0.584 | Time:  88.8s
+Ep  510/2000 | Lines:    1 (Avg50:   0.8) | Score:     40 | Steps:   30 | Reward:  -179.5 | Loss: 4.8260 | Eps: 0.575 | Time:  90.8s
+Ep  520/2000 | Lines:    1 (Avg50:   0.7) | Score:     40 | Steps:   36 | Reward:  -149.5 | Loss: 4.8273 | Eps: 0.567 | Time:  92.8s
+Ep  530/2000 | Lines:    3 (Avg50:   0.8) | Score:    120 | Steps:   32 | Reward:  -170.0 | Loss: 4.7385 | Eps: 0.559 | Time:  94.9s
+Ep  540/2000 | Lines:    2 (Avg50:   1.1) | Score:     80 | Steps:   32 | Reward:  -182.0 | Loss: 4.8463 | Eps: 0.550 | Time:  97.3s
+Ep  550/2000 | Lines:    0 (Avg50:   1.2) | Score:      0 | Steps:   33 | Reward:  -169.5 | Loss: 5.2542 | Eps: 0.542 | Time:  99.6s
+Ep  560/2000 | Lines:    3 (Avg50:   1.2) | Score:    120 | Steps:   38 | Reward:  -139.0 | Loss: 4.6528 | Eps: 0.534 | Time: 101.6s
+Ep  570/2000 | Lines:    0 (Avg50:   1.2) | Score:      0 | Steps:   32 | Reward:  -159.5 | Loss: 4.6477 | Eps: 0.525 | Time: 103.7s
+Ep  580/2000 | Lines:    4 (Avg50:   1.2) | Score:    160 | Steps:   49 | Reward:   -79.5 | Loss: 6.0806 | Eps: 0.517 | Time: 105.9s
+Ep  590/2000 | Lines:    1 (Avg50:   1.2) | Score:     40 | Steps:   34 | Reward:  -166.5 | Loss: 4.4923 | Eps: 0.509 | Time: 108.1s
+Ep  600/2000 | Lines:    1 (Avg50:   1.2) | Score:     40 | Steps:   35 | Reward:  -160.0 | Loss: 4.4520 | Eps: 0.500 | Time: 110.1s
+Ep  610/2000 | Lines:    2 (Avg50:   1.4) | Score:     80 | Steps:   33 | Reward:  -170.5 | Loss: 4.9867 | Eps: 0.492 | Time: 112.3s
+Ep  620/2000 | Lines:    1 (Avg50:   1.4) | Score:     40 | Steps:   30 | Reward:  -195.5 | Loss: 4.3986 | Eps: 0.484 | Time: 114.4s
+Ep  630/2000 | Lines:    1 (Avg50:   1.3) | Score:     40 | Steps:   37 | Reward:  -150.0 | Loss: 4.8483 | Eps: 0.476 | Time: 116.6s
+Ep  640/2000 | Lines:    3 (Avg50:   1.4) | Score:    120 | Steps:   44 | Reward:  -108.5 | Loss: 4.2738 | Eps: 0.467 | Time: 118.9s
+Ep  650/2000 | Lines:    1 (Avg50:   1.3) | Score:     40 | Steps:   32 | Reward:  -182.5 | Loss: 4.3039 | Eps: 0.459 | Time: 120.9s
+Ep  660/2000 | Lines:    0 (Avg50:   1.2) | Score:      0 | Steps:   27 | Reward:  -210.5 | Loss: 4.3425 | Eps: 0.451 | Time: 123.2s
+>>> [NEW RECORD] Episode 664: Cleared 8 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  670/2000 | Lines:    1 (Avg50:   1.5) | Score:     40 | Steps:   40 | Reward:  -128.0 | Loss: 4.3369 | Eps: 0.442 | Time: 125.9s
+Ep  680/2000 | Lines:    0 (Avg50:   1.7) | Score:      0 | Steps:   36 | Reward:  -147.5 | Loss: 4.2566 | Eps: 0.434 | Time: 128.6s
+Ep  690/2000 | Lines:    3 (Avg50:   2.0) | Score:    120 | Steps:   42 | Reward:  -119.0 | Loss: 4.2452 | Eps: 0.426 | Time: 131.1s
+>>> [NEW RECORD] Episode 691: Cleared 9 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  700/2000 | Lines:    5 (Avg50:   2.6) | Score:    200 | Steps:   44 | Reward:  -125.0 | Loss: 4.7916 | Eps: 0.417 | Time: 133.8s
+>>> [NEW RECORD] Episode 703: Cleared 11 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  710/2000 | Lines:    3 (Avg50:   2.9) | Score:    120 | Steps:   42 | Reward:  -126.5 | Loss: 4.2562 | Eps: 0.409 | Time: 136.6s
+Ep  720/2000 | Lines:    7 (Avg50:   2.9) | Score:    300 | Steps:   58 | Reward:    -2.5 | Loss: 4.2383 | Eps: 0.401 | Time: 139.2s
+Ep  730/2000 | Lines:    3 (Avg50:   3.1) | Score:    120 | Steps:   44 | Reward:  -112.5 | Loss: 4.2561 | Eps: 0.392 | Time: 141.6s
+Ep  740/2000 | Lines:    5 (Avg50:   3.5) | Score:    200 | Steps:   47 | Reward:   -82.5 | Loss: 4.6644 | Eps: 0.384 | Time: 144.3s
+>>> [NEW RECORD] Episode 742: Cleared 12 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  750/2000 | Lines:    6 (Avg50:   4.0) | Score:    240 | Steps:   54 | Reward:   -55.5 | Loss: 4.3133 | Eps: 0.376 | Time: 147.7s
+>>> [NEW RECORD] Episode 753: Cleared 15 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  760/2000 | Lines:    9 (Avg50:   4.5) | Score:    360 | Steps:   63 | Reward:    -7.0 | Loss: 4.3708 | Eps: 0.367 | Time: 150.7s
+Ep  770/2000 | Lines:    1 (Avg50:   4.6) | Score:     40 | Steps:   40 | Reward:  -125.5 | Loss: 4.5464 | Eps: 0.359 | Time: 153.5s
+Ep  780/2000 | Lines:    7 (Avg50:   4.7) | Score:    300 | Steps:   55 | Reward:   -24.0 | Loss: 4.2420 | Eps: 0.351 | Time: 156.5s
+Ep  790/2000 | Lines:    0 (Avg50:   4.6) | Score:      0 | Steps:   29 | Reward:  -199.5 | Loss: 4.7316 | Eps: 0.342 | Time: 159.2s
+Ep  800/2000 | Lines:    4 (Avg50:   4.3) | Score:    180 | Steps:   48 | Reward:   -59.0 | Loss: 4.6118 | Eps: 0.334 | Time: 162.3s
+Ep  810/2000 | Lines:    1 (Avg50:   4.2) | Score:     40 | Steps:   30 | Reward:  -196.5 | Loss: 4.2107 | Eps: 0.326 | Time: 164.8s
+Ep  820/2000 | Lines:    6 (Avg50:   4.3) | Score:    260 | Steps:   54 | Reward:   -22.5 | Loss: 4.1993 | Eps: 0.317 | Time: 167.5s
+Ep  830/2000 | Lines:    2 (Avg50:   4.8) | Score:     80 | Steps:   43 | Reward:  -100.5 | Loss: 4.2613 | Eps: 0.309 | Time: 170.9s
+Ep  840/2000 | Lines:    6 (Avg50:   5.5) | Score:    420 | Steps:   54 | Reward:     7.5 | Loss: 4.6880 | Eps: 0.301 | Time: 174.5s
+>>> [NEW RECORD] Episode 844: Cleared 18 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+>>> [NEW RECORD] Episode 849: Cleared 24 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  850/2000 | Lines:    3 (Avg50:   6.0) | Score:    120 | Steps:   44 | Reward:  -103.5 | Loss: 4.1966 | Eps: 0.292 | Time: 178.4s
+Ep  860/2000 | Lines:    9 (Avg50:   7.1) | Score:    360 | Steps:   62 | Reward:    -7.0 | Loss: 4.2653 | Eps: 0.284 | Time: 182.2s
+Ep  870/2000 | Lines:   10 (Avg50:   8.4) | Score:    400 | Steps:   67 | Reward:    21.0 | Loss: 4.3000 | Eps: 0.276 | Time: 186.1s
+Ep  880/2000 | Lines:    7 (Avg50:   9.0) | Score:    280 | Steps:   57 | Reward:   -38.5 | Loss: 4.2651 | Eps: 0.267 | Time: 189.9s
+Ep  890/2000 | Lines:    2 (Avg50:   8.7) | Score:     80 | Steps:   45 | Reward:   -91.0 | Loss: 4.2680 | Eps: 0.259 | Time: 193.0s
+Ep  900/2000 | Lines:    7 (Avg50:   9.4) | Score:    280 | Steps:   58 | Reward:   -24.0 | Loss: 4.3071 | Eps: 0.251 | Time: 197.2s
+Ep  910/2000 | Lines:    5 (Avg50:   9.0) | Score:    220 | Steps:   52 | Reward:   -41.0 | Loss: 4.2654 | Eps: 0.242 | Time: 200.7s
+Ep  920/2000 | Lines:    6 (Avg50:   8.8) | Score:    240 | Steps:   53 | Reward:   -56.5 | Loss: 4.0947 | Eps: 0.234 | Time: 204.4s
+>>> [NEW RECORD] Episode 921: Cleared 27 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  930/2000 | Lines:   17 (Avg50:   9.0) | Score:    700 | Steps:   84 | Reward:   124.5 | Loss: 4.6082 | Eps: 0.226 | Time: 208.6s
+Ep  940/2000 | Lines:   14 (Avg50:   9.3) | Score:    580 | Steps:   73 | Reward:    65.0 | Loss: 4.2298 | Eps: 0.217 | Time: 212.1s
+Ep  950/2000 | Lines:    4 (Avg50:   9.4) | Score:    180 | Steps:   47 | Reward:   -71.5 | Loss: 4.3491 | Eps: 0.209 | Time: 216.5s
+Ep  960/2000 | Lines:   20 (Avg50:  10.2) | Score:    840 | Steps:   92 | Reward:   189.0 | Loss: 4.3179 | Eps: 0.201 | Time: 221.2s
+Ep  970/2000 | Lines:    9 (Avg50:  10.7) | Score:    380 | Steps:   63 | Reward:    21.5 | Loss: 4.3314 | Eps: 0.192 | Time: 225.9s
+>>> [NEW RECORD] Episode 979: Cleared 29 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+>>> [NEW RECORD] Episode 980: Cleared 36 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  980/2000 | Lines:   36 (Avg50:  11.9) | Score:   1540 | Steps:  130 | Reward:   431.5 | Loss: 4.4108 | Eps: 0.184 | Time: 231.3s
+>>> [NEW RECORD] Episode 990: Cleared 41 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep  990/2000 | Lines:   41 (Avg50:  14.3) | Score:   1880 | Steps:  143 | Reward:   527.0 | Loss: 4.3876 | Eps: 0.176 | Time: 237.5s
+Ep 1000/2000 | Lines:   11 (Avg50:  14.8) | Score:    460 | Steps:   68 | Reward:    36.0 | Loss: 4.3516 | Eps: 0.167 | Time: 242.6s
+Ep 1010/2000 | Lines:   23 (Avg50:  15.7) | Score:    960 | Steps:   98 | Reward:   216.0 | Loss: 4.4651 | Eps: 0.159 | Time: 248.2s
+>>> [NEW RECORD] Episode 1012: Cleared 54 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1020/2000 | Lines:   13 (Avg50:  17.5) | Score:    580 | Steps:   72 | Reward:    93.5 | Loss: 4.6320 | Eps: 0.151 | Time: 254.4s
+Ep 1030/2000 | Lines:   30 (Avg50:  18.9) | Score:   2340 | Steps:  114 | Reward:   468.5 | Loss: 4.6315 | Eps: 0.143 | Time: 261.1s
+>>> [NEW RECORD] Episode 1032: Cleared 62 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1040/2000 | Lines:   38 (Avg50:  20.7) | Score:   1740 | Steps:  136 | Reward:   578.5 | Loss: 4.5610 | Eps: 0.134 | Time: 268.6s
+>>> [NEW RECORD] Episode 1044: Cleared 69 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1050/2000 | Lines:   42 (Avg50:  25.4) | Score:   1800 | Steps:  147 | Reward:   538.5 | Loss: 4.9795 | Eps: 0.126 | Time: 277.7s
+>>> [NEW RECORD] Episode 1060: Cleared 75 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1060/2000 | Lines:   75 (Avg50:  31.7) | Score:   3460 | Steps:  230 | Reward:  1175.0 | Loss: 4.6306 | Eps: 0.118 | Time: 288.4s
+Ep 1070/2000 | Lines:   28 (Avg50:  34.8) | Score:   1240 | Steps:  113 | Reward:   368.0 | Loss: 4.6146 | Eps: 0.109 | Time: 297.4s
+>>> [NEW RECORD] Episode 1073: Cleared 108 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1080/2000 | Lines:   82 (Avg50:  39.4) | Score:   3960 | Steps:  248 | Reward:  1358.5 | Loss: 4.7828 | Eps: 0.101 | Time: 307.9s
+Ep 1090/2000 | Lines:   51 (Avg50:  43.6) | Score:   2300 | Steps:  170 | Reward:   796.0 | Loss: 4.6665 | Eps: 0.093 | Time: 318.8s
+>>> [NEW RECORD] Episode 1093: Cleared 127 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1100/2000 | Lines:   90 (Avg50:  50.8) | Score:   4140 | Steps:  266 | Reward:  1445.5 | Loss: 4.7770 | Eps: 0.084 | Time: 334.0s
+Ep 1110/2000 | Lines:   70 (Avg50:  54.0) | Score:   3400 | Steps:  217 | Reward:  1132.5 | Loss: 4.8516 | Eps: 0.076 | Time: 347.6s
+>>> [NEW RECORD] Episode 1114: Cleared 165 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+>>> [NEW RECORD] Episode 1118: Cleared 171 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+>>> [NEW RECORD] Episode 1120: Cleared 220 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1120/2000 | Lines:  220 (Avg50:  65.7) | Score:  11320 | Steps:  592 | Reward:  3767.5 | Loss: 4.6520 | Eps: 0.068 | Time: 366.4s
+Ep 1130/2000 | Lines:  133 (Avg50:  71.2) | Score:   6440 | Steps:  375 | Reward:  2204.0 | Loss: 4.6177 | Eps: 0.059 | Time: 381.6s
+Ep 1140/2000 | Lines:  115 (Avg50:  81.1) | Score:   5280 | Steps:  329 | Reward:  1769.5 | Loss: 4.7370 | Eps: 0.051 | Time: 401.1s
+>>> [NEW RECORD] Episode 1147: Cleared 352 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1150/2000 | Lines:   96 (Avg50:  97.8) | Score:   5240 | Steps:  282 | Reward:  1578.0 | Loss: 4.4651 | Eps: 0.043 | Time: 428.7s
+>>> [NEW RECORD] Episode 1156: Cleared 484 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+>>> [NEW RECORD] Episode 1158: Cleared 510 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1160/2000 | Lines:  153 (Avg50: 132.0) | Score:   8360 | Steps:  424 | Reward:  2770.0 | Loss: 4.0803 | Eps: 0.034 | Time: 469.3s
+>>> [NEW RECORD] Episode 1163: Cleared 592 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+>>> [NEW RECORD] Episode 1167: Cleared 596 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+>>> [NEW RECORD] Episode 1168: Cleared 597 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1170/2000 | Lines:  587 (Avg50: 197.0) | Score:  31360 | Steps: 1500 | Reward: 11066.0 | Loss: 3.8722 | Eps: 0.026 | Time: 541.4s
+>>> [NEW RECORD] Episode 1178: Cleared 598 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1180/2000 | Lines:  596 (Avg50: 294.5) | Score:  33420 | Steps: 1500 | Reward: 11535.5 | Loss: 3.6127 | Eps: 0.018 | Time: 640.1s
+>>> [NEW RECORD] Episode 1186: Cleared 599 lines! Saved to /kaggle/working/results_target/checkpoints/expected_sarsa_s1/best_model.pth
+Ep 1190/2000 | Lines:  144 (Avg50: 380.9) | Score:   7480 | Steps:  402 | Reward:  2702.5 | Loss: 3.6011 | Eps: 0.009 | Time: 727.2s
+Ep 1200/2000 | Lines:  595 (Avg50: 468.7) | Score:  39320 | Steps: 1500 | Reward: 12814.5 | Loss: 3.7212 | Eps: 0.001 | Time: 823.6s
+Ep 1210/2000 | Lines:  596 (Avg50: 541.0) | Score:  37020 | Steps: 1500 | Reward: 12574.0 | Loss: 3.7610 | Eps: 0.001 | Time: 924.0s
+Ep 1220/2000 | Lines:  597 (Avg50: 576.1) | Score:  30360 | Steps: 1500 | Reward: 11689.0 | Loss: 3.6375 | Eps: 0.001 | Time: 1028.5s
+Ep 1230/2000 | Lines:  596 (Avg50: 576.3) | Score:  35720 | Steps: 1500 | Reward: 12235.0 | Loss: 3.6430 | Eps: 0.001 | Time: 1123.8s
+Ep 1240/2000 | Lines:  597 (Avg50: 589.4) | Score:  36740 | Steps: 1500 | Reward: 12311.5 | Loss: 3.7320 | Eps: 0.001 | Time: 1220.5s
+Ep 1250/2000 | Lines:  597 (Avg50: 589.6) | Score:  38160 | Steps: 1500 | Reward: 12851.0 | Loss: 3.6921 | Eps: 0.001 | Time: 1314.5s
+Ep 1260/2000 | Lines:  596 (Avg50: 589.8) | Score:  36180 | Steps: 1500 | Reward: 12411.5 | Loss: 3.7665 | Eps: 0.001 | Time: 1410.5s
+Ep 1270/2000 | Lines:  589 (Avg50: 589.7) | Score:  40460 | Steps: 1500 | Reward: 12936.0 | Loss: 3.6331 | Eps: 0.001 | Time: 1509.6s
+Ep 1280/2000 | Lines:  597 (Avg50: 596.5) | Score:  34500 | Steps: 1500 | Reward: 12228.0 | Loss: 3.8398 | Eps: 0.001 | Time: 1611.8s
+Ep 1290/2000 | Lines:  453 (Avg50: 593.6) | Score:  27300 | Steps: 1174 | Reward:  9588.5 | Loss: 3.9184 | Eps: 0.001 | Time: 1713.0s
+Ep 1300/2000 | Lines:  598 (Avg50: 593.4) | Score:  39300 | Steps: 1500 | Reward: 12727.5 | Loss: 3.9147 | Eps: 0.001 | Time: 1816.6s
+Ep 1310/2000 | Lines:  596 (Avg50: 593.2) | Score:  34340 | Steps: 1500 | Reward: 12328.5 | Loss: 3.9322 | Eps: 0.001 | Time: 1919.9s
+Ep 1320/2000 | Lines:  597 (Avg50: 593.4) | Score:  32700 | Steps: 1500 | Reward: 12390.5 | Loss: 3.9759 | Eps: 0.001 | Time: 2023.6s
+Ep 1330/2000 | Lines:  596 (Avg50: 593.6) | Score:  35360 | Steps: 1500 | Reward: 12314.0 | Loss: 3.9643 | Eps: 0.001 | Time: 2127.0s
+Ep 1340/2000 | Lines:  590 (Avg50: 596.4) | Score:  44740 | Steps: 1500 | Reward: 13072.0 | Loss: 3.8836 | Eps: 0.001 | Time: 2232.6s
+Ep 1350/2000 | Lines:  596 (Avg50: 596.5) | Score:  39080 | Steps: 1500 | Reward: 12711.5 | Loss: 3.7967 | Eps: 0.001 | Time: 2344.1s
+Ep 1360/2000 | Lines:  598 (Avg50: 596.5) | Score:  34820 | Steps: 1500 | Reward: 12327.0 | Loss: 3.8618 | Eps: 0.001 | Time: 2454.8s
+Ep 1370/2000 | Lines:  596 (Avg50: 596.4) | Score:  37900 | Steps: 1500 | Reward: 12775.0 | Loss: 3.8891 | Eps: 0.001 | Time: 2562.8s
+Ep 1380/2000 | Lines:  596 (Avg50: 596.0) | Score:  38520 | Steps: 1500 | Reward: 12710.0 | Loss: 3.9688 | Eps: 0.001 | Time: 2667.7s
+Ep 1390/2000 | Lines:  596 (Avg50: 595.9) | Score:  41000 | Steps: 1500 | Reward: 13316.0 | Loss: 4.1251 | Eps: 0.001 | Time: 2770.9s
+Ep 1400/2000 | Lines:  597 (Avg50: 595.9) | Score:  34880 | Steps: 1500 | Reward: 12488.5 | Loss: 4.1128 | Eps: 0.001 | Time: 2875.0s
+Ep 1410/2000 | Lines:  598 (Avg50: 596.0) | Score:  34960 | Steps: 1500 | Reward: 12346.0 | Loss: 4.1890 | Eps: 0.001 | Time: 2978.5s
+Ep 1420/2000 | Lines:  598 (Avg50: 596.1) | Score:  36080 | Steps: 1500 | Reward: 12625.5 | Loss: 4.0412 | Eps: 0.001 | Time: 3083.0s
+Ep 1430/2000 | Lines:  595 (Avg50: 591.5) | Score:  39560 | Steps: 1500 | Reward: 12858.0 | Loss: 3.9375 | Eps: 0.001 | Time: 3182.8s
+Ep 1440/2000 | Lines:  596 (Avg50: 580.9) | Score:  37160 | Steps: 1500 | Reward: 12915.5 | Loss: 4.1173 | Eps: 0.001 | Time: 3276.6s
+Ep 1450/2000 | Lines:  597 (Avg50: 581.0) | Score:  37680 | Steps: 1500 | Reward: 12730.5 | Loss: 4.3829 | Eps: 0.001 | Time: 3379.3s
+Ep 1460/2000 | Lines:  596 (Avg50: 580.9) | Score:  40860 | Steps: 1500 | Reward: 13093.0 | Loss: 4.2105 | Eps: 0.001 | Time: 3481.5s
+Ep 1470/2000 | Lines:  595 (Avg50: 581.0) | Score:  35720 | Steps: 1500 | Reward: 12775.5 | Loss: 4.2818 | Eps: 0.001 | Time: 3583.9s
+Ep 1480/2000 | Lines:  595 (Avg50: 585.6) | Score:  36160 | Steps: 1500 | Reward: 12660.0 | Loss: 4.1582 | Eps: 0.001 | Time: 3687.0s
+Ep 1490/2000 | Lines:  593 (Avg50: 596.3) | Score:  43040 | Steps: 1500 | Reward: 13268.5 | Loss: 4.1887 | Eps: 0.001 | Time: 3790.1s
+Ep 1500/2000 | Lines:  166 (Avg50: 587.6) | Score:  11020 | Steps:  456 | Reward:  3364.0 | Loss: 4.3898 | Eps: 0.001 | Time: 3886.8s
+Ep 1510/2000 | Lines:  597 (Avg50: 587.7) | Score:  35360 | Steps: 1500 | Reward: 12808.5 | Loss: 4.4323 | Eps: 0.001 | Time: 3991.0s
+Ep 1520/2000 | Lines:  596 (Avg50: 587.6) | Score:  40420 | Steps: 1500 | Reward: 12896.0 | Loss: 4.3680 | Eps: 0.001 | Time: 4094.9s
+Ep 1530/2000 | Lines:  591 (Avg50: 587.5) | Score:  40300 | Steps: 1500 | Reward: 13047.0 | Loss: 4.4373 | Eps: 0.001 | Time: 4202.5s
+Ep 1540/2000 | Lines:  596 (Avg50: 587.3) | Score:  38580 | Steps: 1500 | Reward: 13296.0 | Loss: 4.5883 | Eps: 0.001 | Time: 4309.7s
+Ep 1550/2000 | Lines:  593 (Avg50: 595.5) | Score:  37560 | Steps: 1500 | Reward: 13065.5 | Loss: 4.4718 | Eps: 0.001 | Time: 4416.2s
+Ep 1560/2000 | Lines:  594 (Avg50: 595.4) | Score:  37360 | Steps: 1500 | Reward: 12963.5 | Loss: 4.4636 | Eps: 0.001 | Time: 4519.4s
+Ep 1570/2000 | Lines:  596 (Avg50: 595.3) | Score:  35900 | Steps: 1500 | Reward: 13052.0 | Loss: 4.4768 | Eps: 0.001 | Time: 4623.2s
+Ep 1580/2000 | Lines:  598 (Avg50: 595.3) | Score:  40200 | Steps: 1500 | Reward: 13306.0 | Loss: 4.5819 | Eps: 0.001 | Time: 4725.5s
+Ep 1590/2000 | Lines:  597 (Avg50: 593.0) | Score:  37300 | Steps: 1500 | Reward: 12871.5 | Loss: 4.7516 | Eps: 0.001 | Time: 4825.3s
+Ep 1600/2000 | Lines:  595 (Avg50: 593.0) | Score:  40320 | Steps: 1500 | Reward: 13452.5 | Loss: 4.6789 | Eps: 0.001 | Time: 4926.5s
+Ep 1610/2000 | Lines:  597 (Avg50: 593.0) | Score:  37560 | Steps: 1500 | Reward: 13168.5 | Loss: 4.8904 | Eps: 0.001 | Time: 5027.6s
+Ep 1620/2000 | Lines:  366 (Avg50: 588.5) | Score:  29680 | Steps:  956 | Reward:  8711.5 | Loss: 4.5891 | Eps: 0.001 | Time: 5124.4s
+Ep 1630/2000 | Lines:  595 (Avg50: 588.4) | Score:  41480 | Steps: 1500 | Reward: 13578.5 | Loss: 4.7634 | Eps: 0.001 | Time: 5224.5s
+Ep 1640/2000 | Lines:  598 (Avg50: 590.6) | Score:  35080 | Steps: 1500 | Reward: 12986.5 | Loss: 4.8604 | Eps: 0.001 | Time: 5321.6s
+Ep 1650/2000 | Lines:  594 (Avg50: 590.7) | Score:  41800 | Steps: 1500 | Reward: 13470.0 | Loss: 4.9310 | Eps: 0.001 | Time: 5409.6s
+Ep 1660/2000 | Lines:  325 (Avg50: 585.4) | Score:  20440 | Steps:  854 | Reward:  7080.0 | Loss: 4.7931 | Eps: 0.001 | Time: 5502.6s
+Ep 1670/2000 | Lines:  597 (Avg50: 589.8) | Score:  39640 | Steps: 1500 | Reward: 13531.5 | Loss: 4.9222 | Eps: 0.001 | Time: 5600.4s
+Ep 1680/2000 | Lines:  596 (Avg50: 589.7) | Score:  38520 | Steps: 1500 | Reward: 13596.5 | Loss: 4.9050 | Eps: 0.001 | Time: 5693.9s
+Ep 1690/2000 | Lines:   67 (Avg50: 579.7) | Score:   4300 | Steps:  210 | Reward:  1321.0 | Loss: 4.9285 | Eps: 0.001 | Time: 5783.0s
+Ep 1700/2000 | Lines:  598 (Avg50: 579.9) | Score:  39860 | Steps: 1500 | Reward: 13485.0 | Loss: 4.9715 | Eps: 0.001 | Time: 5879.9s
+Ep 1710/2000 | Lines:  596 (Avg50: 585.2) | Score:  39820 | Steps: 1500 | Reward: 13814.0 | Loss: 4.8592 | Eps: 0.001 | Time: 5976.8s
+Ep 1720/2000 | Lines:  595 (Avg50: 585.4) | Score:  44540 | Steps: 1500 | Reward: 13997.0 | Loss: 4.8959 | Eps: 0.001 | Time: 6078.3s
+Ep 1730/2000 | Lines:  596 (Avg50: 575.8) | Score:  43640 | Steps: 1500 | Reward: 13874.5 | Loss: 4.9188 | Eps: 0.001 | Time: 6166.9s
+Ep 1740/2000 | Lines:  596 (Avg50: 570.5) | Score:  51040 | Steps: 1500 | Reward: 14712.5 | Loss: 5.0380 | Eps: 0.001 | Time: 6252.1s
+Ep 1750/2000 | Lines:  591 (Avg50: 570.2) | Score:  41160 | Steps: 1500 | Reward: 13712.0 | Loss: 5.1056 | Eps: 0.001 | Time: 6352.1s
+Ep 1760/2000 | Lines:  591 (Avg50: 560.0) | Score:  47140 | Steps: 1500 | Reward: 14375.0 | Loss: 5.1072 | Eps: 0.001 | Time: 6444.2s
+Ep 1770/2000 | Lines:  594 (Avg50: 550.6) | Score:  46360 | Steps: 1500 | Reward: 14317.5 | Loss: 5.3239 | Eps: 0.001 | Time: 6527.2s
+Ep 1780/2000 | Lines:  596 (Avg50: 560.0) | Score:  44820 | Steps: 1500 | Reward: 14050.5 | Loss: 5.0584 | Eps: 0.001 | Time: 6619.2s
+Ep 1790/2000 | Lines:  597 (Avg50: 575.7) | Score:  43100 | Steps: 1500 | Reward: 14187.5 | Loss: 5.0012 | Eps: 0.001 | Time: 6721.5s
+Ep 1800/2000 | Lines:  587 (Avg50: 565.8) | Score:  38780 | Steps: 1500 | Reward: 13583.5 | Loss: 5.0751 | Eps: 0.001 | Time: 6800.2s
+Ep 1810/2000 | Lines:  595 (Avg50: 575.6) | Score:  43720 | Steps: 1500 | Reward: 14055.5 | Loss: 4.9708 | Eps: 0.001 | Time: 6878.4s
+Ep 1820/2000 | Lines:  265 (Avg50: 565.7) | Score:  26900 | Steps:  707 | Reward:  6798.0 | Loss: 5.0192 | Eps: 0.001 | Time: 6944.1s
+Ep 1830/2000 | Lines:  380 (Avg50: 551.8) | Score:  31920 | Steps:  989 | Reward:  9199.5 | Loss: 5.1397 | Eps: 0.001 | Time: 7012.7s
+Ep 1840/2000 | Lines:  595 (Avg50: 545.8) | Score:  38320 | Steps: 1500 | Reward: 13413.5 | Loss: 5.1375 | Eps: 0.001 | Time: 7088.3s
+Ep 1850/2000 | Lines:  592 (Avg50: 531.4) | Score:  44100 | Steps: 1500 | Reward: 13865.5 | Loss: 5.1285 | Eps: 0.001 | Time: 7151.6s
+Ep 1860/2000 | Lines:  592 (Avg50: 523.9) | Score:  44400 | Steps: 1500 | Reward: 13844.0 | Loss: 5.1604 | Eps: 0.001 | Time: 7225.4s
+Ep 1870/2000 | Lines:  595 (Avg50: 525.9) | Score:  47040 | Steps: 1500 | Reward: 14208.5 | Loss: 5.1562 | Eps: 0.001 | Time: 7293.5s
+Ep 1880/2000 | Lines:  596 (Avg50: 524.4) | Score:  46360 | Steps: 1500 | Reward: 14275.0 | Loss: 5.2654 | Eps: 0.001 | Time: 7363.1s
+Ep 1890/2000 | Lines:  597 (Avg50: 513.1) | Score:  40660 | Steps: 1500 | Reward: 13949.0 | Loss: 5.2509 | Eps: 0.001 | Time: 7432.2s
+Ep 1900/2000 | Lines:  230 (Avg50: 529.5) | Score:  16980 | Steps:  617 | Reward:  5328.0 | Loss: 5.0317 | Eps: 0.001 | Time: 7507.5s
+Ep 1910/2000 | Lines:  590 (Avg50: 537.1) | Score:  47000 | Steps: 1500 | Reward: 14329.5 | Loss: 5.0277 | Eps: 0.001 | Time: 7587.3s
+Ep 1920/2000 | Lines:  589 (Avg50: 553.8) | Score:  41560 | Steps: 1500 | Reward: 13364.0 | Loss: 4.9978 | Eps: 0.001 | Time: 7665.8s
+Ep 1930/2000 | Lines:  596 (Avg50: 566.4) | Score:  38340 | Steps: 1500 | Reward: 13290.5 | Loss: 5.0513 | Eps: 0.001 | Time: 7742.3s
+Ep 1940/2000 | Lines:  595 (Avg50: 583.7) | Score:  42520 | Steps: 1500 | Reward: 13817.5 | Loss: 5.0737 | Eps: 0.001 | Time: 7820.3s
+Ep 1950/2000 | Lines:   40 (Avg50: 578.7) | Score:   2060 | Steps:  142 | Reward:   732.5 | Loss: 5.1084 | Eps: 0.001 | Time: 7890.1s
+Ep 1960/2000 | Lines:  589 (Avg50: 575.6) | Score:  45400 | Steps: 1500 | Reward: 13837.5 | Loss: 5.0801 | Eps: 0.001 | Time: 7966.5s
+Ep 1970/2000 | Lines:  408 (Avg50: 564.8) | Score:  31820 | Steps: 1063 | Reward:  9706.0 | Loss: 5.0237 | Eps: 0.001 | Time: 8036.5s
+Ep 1980/2000 | Lines:  598 (Avg50: 566.1) | Score:  42980 | Steps: 1500 | Reward: 13526.0 | Loss: 4.9817 | Eps: 0.001 | Time: 8113.7s
+Ep 1990/2000 | Lines:  381 (Avg50: 541.8) | Score:  28020 | Steps:  994 | Reward:  8851.5 | Loss: 4.9428 | Eps: 0.001 | Time: 8184.9s
+Ep 2000/2000 | Lines:  595 (Avg50: 554.7) | Score:  43460 | Steps: 1500 | Reward: 13838.5 | Loss: 5.0346 | Eps: 0.001 | Time: 8267.9s
+=================================================================
+SUCCESS: TRAINING FINISHED!
+Best Lines Achieved: 599
+Latest checkpoint saved at: /kaggle/working/results_target/checkpoints/expected_sarsa_s1/latest_model.pth
+=================================================================

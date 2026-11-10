@@ -57,12 +57,95 @@ def run_single_game(env, agent, is_dqn=False, max_steps=10000):
         "score": env.score,
         "steps": steps,
         "pieces": env.pieces_count,
+        "hit_cap": (not env.game_over) and steps >= max_steps,
     }
+
+
+def set_seed(seed):
+    """Cố định seed để các agent/cấu hình được đánh giá trên cùng chuỗi khối gạch."""
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        import torch
+        torch.manual_seed(seed)
+    except ImportError:
+        pass
+
+
+def summarize(game_stats, max_steps):
+    """Tính các metric theo Table 1 của report."""
+    lines_arr = [s["lines"] for s in game_stats]
+    scores_arr = [s["score"] for s in game_stats]
+    pieces_arr = [s["pieces"] for s in game_stats]
+    total_lines = int(np.sum(lines_arr))
+    return {
+        "games": len(game_stats),
+        "max_steps": max_steps,
+        "mean_lines": float(np.mean(lines_arr)),
+        "std_lines": float(np.std(lines_arr)),
+        "median_lines": float(np.median(lines_arr)),
+        "max_lines": int(np.max(lines_arr)),
+        "min_lines": int(np.min(lines_arr)),
+        "mean_score": float(np.mean(scores_arr)),
+        "std_score": float(np.std(scores_arr)),
+        "max_score": int(np.max(scores_arr)),
+        # Survival Placements = số khối đặt được trung bình mỗi ván
+        "mean_placements": float(np.mean(pieces_arr)),
+        "mean_steps": float(np.mean(pieces_arr)),  # giữ key cũ cho các tool khác
+        # Points / Line = tổng điểm / tổng số hàng (cao = hay ăn combo 3-4 hàng)
+        "points_per_line": float(np.sum(scores_arr) / total_lines) if total_lines > 0 else 0.0,
+        # Số ván sống tới trần max_steps (không thua)
+        "cap_hits": int(sum(s["hit_cap"] for s in game_stats)),
+        "raw_lines": lines_arr,
+        "raw_scores": scores_arr,
+        "raw_placements": pieces_arr,
+    }
+
+
+def evaluate_agent(agent, is_dqn, games, max_steps, seed, verbose=False):
+    """Chạy `games` ván với seed cố định; ván thứ g dùng seed + g."""
+    env = TetrisEnv()
+    game_stats = []
+    t0 = time.time()
+    for g in range(games):
+        set_seed(seed + g)
+        stats = run_single_game(env, agent, is_dqn=is_dqn, max_steps=max_steps)
+        game_stats.append(stats)
+        if verbose:
+            print(
+                f"  Game {g + 1:3d}/{games}: Lines={stats['lines']:4d} | Score={stats['score']:6d} | "
+                f"Placements={stats['pieces']:4d}{' (cap)' if stats['hit_cap'] else ''}",
+                flush=True,
+            )
+    result = summarize(game_stats, max_steps)
+    result["time_elapsed"] = time.time() - t0
+    return result
+
+
+def print_table1(results):
+    """In bảng theo đúng format Table 1 của report."""
+    header = (
+        f"{'Agent':<36} | {'Lines (Mean ± Std)':<18} | {'Median':>7} | {'Max':>5} | "
+        f"{'Mean Score':>10} | {'Placements':>10} | {'Pts/Line':>8} | {'Cap':>7}"
+    )
+    print("\n" + "=" * len(header), flush=True)
+    print("TABLE 1 – BENCHMARK", flush=True)
+    print("=" * len(header), flush=True)
+    print(header, flush=True)
+    print("-" * len(header), flush=True)
+    for name, r in results.items():
+        ms = f"{r['mean_lines']:.1f} ± {r['std_lines']:.1f}"
+        print(
+            f"{name:<36} | {ms:<18} | {r['median_lines']:>7.1f} | {r['max_lines']:>5} | "
+            f"{r['mean_score']:>10.1f} | {r['mean_placements']:>10.1f} | {r['points_per_line']:>8.1f} | "
+            f"{r['cap_hits']:>3}/{r['games']:<3}",
+            flush=True,
+        )
+    print("=" * len(header), flush=True)
 
 
 def evaluate(args):
     os.makedirs(args.output_dir, exist_ok=True)
-    env = TetrisEnv()
 
     agents = {}
     if not args.skip_random:
@@ -83,53 +166,19 @@ def evaluate(args):
     results = {}
 
     print("=" * 65, flush=True)
-    print(f"STARTING BENCHMARK EVALUATION ({args.games} games per agent)", flush=True)
+    print(
+        f"STARTING BENCHMARK EVALUATION ({args.games} games/agent, max {args.max_steps} placements, seed {args.seed})",
+        flush=True,
+    )
     print("=" * 65, flush=True)
 
     for agent_name, (agent, is_dqn) in agents.items():
         print(f"\nEvaluating: {agent_name}...", flush=True)
-        game_stats = []
-        t0 = time.time()
+        results[agent_name] = evaluate_agent(
+            agent, is_dqn, args.games, args.max_steps, args.seed, verbose=not args.quiet
+        )
 
-        for g in range(1, args.games + 1):
-            stats = run_single_game(env, agent, is_dqn=is_dqn, max_steps=args.max_steps)
-            game_stats.append(stats)
-            print(
-                f"  Game {g:2d}/{args.games}: Lines={stats['lines']:4d} | Score={stats['score']:6d} | Steps={stats['steps']:4d}",
-                flush=True,
-            )
-
-        elapsed = time.time() - t0
-        lines_arr = [s["lines"] for s in game_stats]
-        scores_arr = [s["score"] for s in game_stats]
-        steps_arr = [s["steps"] for s in game_stats]
-
-        results[agent_name] = {
-            "games": args.games,
-            "mean_lines": float(np.mean(lines_arr)),
-            "std_lines": float(np.std(lines_arr)),
-            "max_lines": int(np.max(lines_arr)),
-            "min_lines": int(np.min(lines_arr)),
-            "median_lines": float(np.median(lines_arr)),
-            "mean_score": float(np.mean(scores_arr)),
-            "std_score": float(np.std(scores_arr)),
-            "max_score": int(np.max(scores_arr)),
-            "mean_steps": float(np.mean(steps_arr)),
-            "raw_lines": lines_arr,
-            "raw_scores": scores_arr,
-            "time_elapsed": elapsed,
-        }
-
-    # Print Summary Table
-    print("\n" + "=" * 70, flush=True)
-    print("FINAL BENCHMARK COMPARISON TABLE", flush=True)
-    print("=" * 70, flush=True)
-    print(f"{'Agent':<25} | {'Mean Lines (±Std)':<18} | {'Max Lines':<10} | {'Mean Score':<12}", flush=True)
-    print("-" * 70, flush=True)
-    for name, r in results.items():
-        mean_std_str = f"{r['mean_lines']:.1f} ± {r['std_lines']:.1f}"
-        print(f"{name:<25} | {mean_std_str:<18} | {r['max_lines']:<10} | {r['mean_score']:<12.1f}", flush=True)
-    print("=" * 70, flush=True)
+    print_table1(results)
 
     # Save JSON results
     json_path = os.path.join(args.output_dir, "benchmark_results.json")
@@ -180,8 +229,11 @@ def generate_charts(results, output_file):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate and Benchmark Tetris Agents")
-    parser.add_argument("--games", type=int, default=5, help="Number of games to evaluate per agent")
-    parser.add_argument("--max-steps", type=int, default=500, help="Max steps per game to avoid infinite loops")
+    # Mặc định khớp Table 1 của report: 100 games, trần 1000 bước
+    parser.add_argument("--games", type=int, default=100, help="Number of games to evaluate per agent")
+    parser.add_argument("--max-steps", type=int, default=1000, help="Max placements per game (step cap)")
+    parser.add_argument("--seed", type=int, default=0, help="Base seed (game g uses seed+g)")
+    parser.add_argument("--quiet", action="store_true", help="Không in kết quả từng ván")
     parser.add_argument("--model-path", type=str, default="checkpoints/best_model.pth", help="Trained model path")
     parser.add_argument("--output-dir", type=str, default="reports/figures", help="Directory for reports and plots")
     parser.add_argument("--device", type=str, default="cpu", help="Device (cpu or cuda)")
