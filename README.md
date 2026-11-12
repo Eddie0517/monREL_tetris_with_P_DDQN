@@ -10,6 +10,20 @@
 
 ---
 
+## 🎬 Video Demo
+
+[![Video demo – Cyber Tetris AI Autoplay (Nhóm 6)](videodemo/thumbnail.jpg)](videodemo/REL_video_demo_nhom6.mp4)
+
+▶️ **[Xem video demo (REL_video_demo_nhom6.mp4)](videodemo/REL_video_demo_nhom6.mp4)** — khoảng 1 phút, 1280×720.
+
+Video quay giao diện **Cyber Tetris** trên trình duyệt (`http://localhost:8080`) ở chế độ **AI AUTOPLAY**: AI tự chọn vị trí đặt từng khối, xoá hàng liên tục và điểm số tăng dần từ vài chục lên hơn **47.000 điểm** trong khoảng một phút, trong khi cấp độ và số hàng đã ăn được cập nhật theo thời gian thực.
+
+> Bấm vào ảnh hoặc liên kết phía trên để mở video. Trên GitHub, file `.mp4` mở trong trang xem file; nếu trình duyệt không phát được, bấm **Download / View raw** để tải về xem.
+>
+> Muốn tự chạy demo: `python -m http.server 8080` rồi mở `http://localhost:8080` và bấm **AI AUTOPLAY** (xem mục 6.2), hoặc chạy agent DQN bằng Pygame: `python src/play_ai.py --agent dqn --fps 20` (mục 6.3).
+
+---
+
 ## 📌 1. Giới thiệu đề tài (Project Overview)
 
 Tetris là một trong những bài toán kinh điển trong khoa học máy tính thuộc lớp độ phức tạp **NP-Complete**. Dự án này tập trung vào việc nghiên cứu, mô hình hóa toán học và áp dụng các thuật toán **Học tăng cường (Reinforcement Learning)** — trọng tâm là **Deep Q-Network (DQN / Double DQN)** kết hợp kỹ thuật trích xuất đặc trưng hình học (*Geometric Feature Representation*) để huấn luyện tác tử AI có khả năng tự động chơi Tetris đạt hiệu suất cao.
@@ -67,6 +81,7 @@ monREL_tetris_with_P_DDQN/
 │   ├── evaluate.py                              # Đánh giá benchmark định lượng & xuất biểu đồ khoa học
 │   └── play_ai.py                               # Trực quan hóa AI chơi Tetris thời gian thực bằng Pygame
 ├── tools/                                       # Các công cụ sinh slide, script và phân tích checkpoint
+├── videodemo/                                   # Video demo AI Autoplay (REL_video_demo_nhom6.mp4) và ảnh thumbnail
 ├── audio.js                                     # Bộ tổng hợp âm thanh 8-bit & nhạc nền (Web Audio API)
 ├── index.html                                   # Giao diện chính game Cyber Tetris kèm chế độ AI Autoplay trên Web
 ├── push_to_github.bat                           # Script tự động đồng bộ mã nguồn lên GitHub (Windows CMD)
