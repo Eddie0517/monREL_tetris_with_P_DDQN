@@ -11,7 +11,7 @@ venv/
 notebooks/
 presentation/
 final report/
-
+GROUP6/
 # IDE & Editor
 .vscode/
 .idea/
@@ -67,3 +67,6 @@ doc/MoE-MMR_Presentation.pptx.pdf
 
 # (optional) keep the paper private for double-blind submission
 # final report/
+
+# Downloaded Claude skills (separate git repos)
+skill download/
