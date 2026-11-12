@@ -8,6 +8,10 @@ venv/
 /env/
 .venv/
 
+notebooks/
+presentation/
+final report/
+GROUP6/
 # IDE & Editor
 .vscode/
 .idea/
@@ -35,3 +39,34 @@ KICH_BAN_THUYET_TRINH_BAO_CAO_TIEN_DO_v2.docx
 
 # Office temporary lock files
 ~$*
+
+# Sweep outputs that are not needed in the repo (TensorBoard logs, code copies, draft runs)
+result/*/*/logs/
+result/*/*/code_snapshot/
+checkpoints/sweep*/
+checkpoints/pilot/
+reports/sweep*/
+
+# LaTeX build files and Springer template samples
+final report/*.log
+final report/*.blg
+final report/*.aux
+final report/*.bbl
+final report/*.out
+final report/samplepaper.*
+final report/llncsdoc.pdf
+final report/history.txt
+final report/readme.txt
+final report/DescriptionTexts.txt
+final report/fig1.eps
+
+# Third-party material (lecture slides, other project's deck)
+doc/2.8*.pptx
+doc/2.9*.pptx
+doc/MoE-MMR_Presentation.pptx.pdf
+
+# (optional) keep the paper private for double-blind submission
+# final report/
+
+# Downloaded Claude skills (separate git repos)
+skill download/

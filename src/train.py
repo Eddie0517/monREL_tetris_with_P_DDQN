@@ -18,17 +18,41 @@ except Exception:
     pass
 
 import argparse
+import json
 import time
 import numpy as np
 import torch
 
-from src.env.tetris_env import TetrisEnv
+from src.env.tetris_env import TetrisEnv, DEFAULT_REWARD_WEIGHTS
 from src.agents.dqn_agent import DQNAgent
 
 
+def build_reward_weights(args):
+    """Gom các trọng số reward từ CLI thành dict truyền vào TetrisEnv."""
+    return {
+        "alive": args.r_alive,
+        "lines": args.r_lines,
+        "holes": args.r_holes,
+        "bumpiness": args.r_bumpiness,
+        "height": args.r_height,
+        "game_over_penalty": args.r_game_over,
+    }
+
+
 def train(args):
+    # Mỗi run có thư mục checkpoint/log riêng để dễ so sánh các cấu hình reward
+    if args.run_name:
+        args.checkpoint_dir = os.path.join(args.checkpoint_dir, args.run_name)
+        args.log_dir = os.path.join(args.log_dir, args.run_name)
+
     os.makedirs(args.checkpoint_dir, exist_ok=True)
     os.makedirs(args.log_dir, exist_ok=True)
+
+    if args.seed is not None:
+        import random
+        random.seed(args.seed)
+        np.random.seed(args.seed)
+        torch.manual_seed(args.seed)
 
     # Lazy-load SummaryWriter to avoid startup delay if not needed
     writer = None
@@ -40,7 +64,14 @@ def train(args):
         except Exception as e:
             print(f"TensorBoard could not be initialized ({e}), continuing without it.", flush=True)
 
-    env = TetrisEnv()
+    reward_weights = build_reward_weights(args)
+    env = TetrisEnv(reward_weights=reward_weights)
+
+    # Lưu lại cấu hình của run để đối chiếu sau này
+    config_path = os.path.join(args.checkpoint_dir, "run_config.json")
+    with open(config_path, "w", encoding="utf-8") as f:
+        json.dump({"reward_weights": reward_weights, "args": vars(args)}, f, indent=2, ensure_ascii=False)
+
     agent = DQNAgent(
         state_dim=4,
         hidden_dim=args.hidden_dim,
@@ -48,6 +79,7 @@ def train(args):
         gamma=args.gamma,
         memory_size=args.memory_size,
         device=args.device,
+        target_mode=args.target_mode,
     )
 
     start_episode = 1
@@ -61,9 +93,13 @@ def train(args):
     print("=" * 65, flush=True)
     print(">>> STARTING TETRIS DEEP Q-NETWORK TRAINING", flush=True)
     print(f"Device: {agent.device} | Total Episodes: {args.episodes}", flush=True)
-    print(f"Batch Size: {args.batch_size} | LR: {args.lr} | Gamma: {args.gamma}", flush=True)
+    print(f"Batch Size: {args.batch_size} | LR: {args.lr} | Gamma: {args.gamma} | Target: {args.target_mode}", flush=True)
     print(f"Checkpoints: {args.checkpoint_dir} | Logs: {args.log_dir}", flush=True)
+    print(f"Reward weights: {reward_weights}", flush=True)
     print("=" * 65, flush=True)
+
+    if writer is not None:
+        writer.add_text("Config/Reward_Weights", json.dumps(reward_weights), 0)
 
     recent_lines = []
     recent_rewards = []
@@ -98,7 +134,13 @@ def train(args):
                 next_states = env.get_next_states()
                 if next_states:
                     next_action, next_state = agent.act(next_states, epsilon=epsilon)
-                    agent.remember(current_state, reward, next_state, False)
+                    if agent.needs_candidates:
+                        # Q-learning / Double Q / Expected SARSA cần MỌI afterstate của khối kế tiếp
+                        cands = np.stack([f for f, _ in next_states.values()])
+                        chosen = list(next_states).index(next_action)
+                        agent.remember(current_state, reward, next_state, False, cands, chosen)
+                    else:
+                        agent.remember(current_state, reward, next_state, False)
                     action = next_action
                     current_state = next_state
                 else:
@@ -109,9 +151,13 @@ def train(args):
                 break
 
             # Mini-batch gradient step
-            loss = agent.train_step(batch_size=args.batch_size)
+            loss = agent.train_step(batch_size=args.batch_size, epsilon=epsilon)
             if loss is not None:
                 episode_losses.append(loss)
+
+            # Cắt episode quá dài (truncation, không phải thua -> không lưu transition terminal)
+            if args.max_episode_steps and steps >= args.max_episode_steps:
+                break
 
         # Periodic target network sync
         if episode % args.target_update_freq == 0:
@@ -198,8 +244,25 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint-dir", type=str, default="checkpoints", help="Path to save models")
     parser.add_argument("--log-dir", type=str, default="logs", help="Path for TensorBoard logs")
     parser.add_argument("--device", type=str, default=None, help="Device (cuda or cpu)")
+    parser.add_argument("--target-mode", default="sarsa",
+                        choices=["sarsa", "qlearning", "double_q", "expected_sarsa"],
+                        help="Cách tính target TD: sarsa (gốc) | qlearning | double_q | expected_sarsa")
     parser.add_argument("--resume", type=str, default=None, help="Path to checkpoint to resume")
     parser.add_argument("--no-tensorboard", action="store_true", help="Disable TensorBoard logging")
+    parser.add_argument("--seed", type=int, default=None, help="Seed cho random/numpy/torch (để so sánh công bằng)")
+    parser.add_argument("--max-episode-steps", type=int, default=None,
+                        help="Giới hạn số khối mỗi episode khi train (mặc định: không giới hạn)")
+    parser.add_argument("--run-name", type=str, default=None,
+                        help="Tên run; checkpoint/log sẽ lưu vào <checkpoint-dir>/<run-name> và <log-dir>/<run-name>")
+
+    # Reward weights: R = alive + lines*L^2 - holes*dHoles - bumpiness*dBump - height*dHeight
+    rw = parser.add_argument_group("Reward weights")
+    rw.add_argument("--r-alive", type=float, default=DEFAULT_REWARD_WEIGHTS["alive"], help="Thưởng sống sót mỗi bước")
+    rw.add_argument("--r-lines", type=float, default=DEFAULT_REWARD_WEIGHTS["lines"], help="Hệ số thưởng cho Lines^2")
+    rw.add_argument("--r-holes", type=float, default=DEFAULT_REWARD_WEIGHTS["holes"], help="Hệ số phạt delta Holes")
+    rw.add_argument("--r-bumpiness", type=float, default=DEFAULT_REWARD_WEIGHTS["bumpiness"], help="Hệ số phạt delta Bumpiness")
+    rw.add_argument("--r-height", type=float, default=DEFAULT_REWARD_WEIGHTS["height"], help="Hệ số phạt delta AggHeight")
+    rw.add_argument("--r-game-over", type=float, default=DEFAULT_REWARD_WEIGHTS["game_over_penalty"], help="Mức phạt khi thua")
 
     args = parser.parse_args()
     train(args)

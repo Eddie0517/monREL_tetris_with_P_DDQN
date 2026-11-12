@@ -1,0 +1,39 @@
+{
+  "reward_weights": {
+    "alive": 1.0,
+    "lines": 10.0,
+    "holes": 1.5,
+    "bumpiness": 0.5,
+    "height": 0.5,
+    "game_over_penalty": 10.0
+  },
+  "args": {
+    "episodes": 1050,
+    "batch_size": 512,
+    "hidden_dim": 64,
+    "lr": 0.001,
+    "gamma": 0.99,
+    "memory_size": 30000,
+    "initial_epsilon": 1.0,
+    "min_epsilon": 0.001,
+    "decay_episodes": 1200,
+    "target_update_freq": 10,
+    "log_freq": 10,
+    "save_freq": 2001,
+    "checkpoint_dir": "/kaggle/working/results_target/checkpoints/double_q_1050_s1",
+    "log_dir": "/kaggle/working/results_target/logs/double_q_1050_s1",
+    "device": "cuda",
+    "target_mode": "double_q",
+    "resume": null,
+    "no_tensorboard": false,
+    "seed": 1,
+    "max_episode_steps": 1500,
+    "run_name": "double_q_1050_s1",
+    "r_alive": 1.0,
+    "r_lines": 10.0,
+    "r_holes": 1.5,
+    "r_bumpiness": 0.5,
+    "r_height": 0.5,
+    "r_game_over": 10.0
+  }
+}

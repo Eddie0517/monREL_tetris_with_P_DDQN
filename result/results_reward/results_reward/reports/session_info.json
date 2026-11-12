@@ -1,0 +1,32 @@
+{
+  "group": "reward",
+  "configs": [
+    "baseline",
+    "lines_x2",
+    "lines_half",
+    "holes_x2",
+    "holes_half",
+    "bump_x2",
+    "bump_0",
+    "height_x2",
+    "height_0",
+    "alive_0",
+    "gameover_50",
+    "lines_only"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "episodes": 2000,
+  "decay_episodes": 1200,
+  "max_episode_steps": 1500,
+  "games": 100,
+  "max_steps": 1000,
+  "eval_seed": 12345,
+  "device": "cpu",
+  "jobs": 4,
+  "restored_runs": [],
+  "session_hours": 10.895880482660399
+}

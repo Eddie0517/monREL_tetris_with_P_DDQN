@@ -1,0 +1,28 @@
+{
+  "group": "hparam",
+  "configs": [
+    "baseline",
+    "gamma_095",
+    "lr_5e-4",
+    "target_5",
+    "target_25",
+    "eps_decay_600",
+    "hidden_128",
+    "batch_256"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "episodes": 2000,
+  "decay_episodes": 1200,
+  "max_episode_steps": 1500,
+  "games": 100,
+  "max_steps": 1000,
+  "eval_seed": 12345,
+  "device": "cpu",
+  "jobs": 4,
+  "restored_runs": [],
+  "session_hours": 9.10099155459139
+}

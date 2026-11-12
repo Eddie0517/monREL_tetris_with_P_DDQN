@@ -1,0 +1,83 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793998672.319389     327 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+TensorBoard logging enabled: /kaggle/working/results_reward/logs/holes_half_s2
+=================================================================
+>>> STARTING TETRIS DEEP Q-NETWORK TRAINING
+Device: cpu | Total Episodes: 2000
+Batch Size: 512 | LR: 0.001 | Gamma: 0.99
+Checkpoints: /kaggle/working/results_reward/checkpoints/holes_half_s2 | Logs: /kaggle/working/results_reward/logs/holes_half_s2
+Reward weights: {'alive': 1.0, 'lines': 10.0, 'holes': 0.75, 'bumpiness': 0.5, 'height': 0.5, 'game_over_penalty': 10.0}
+=================================================================
+Ep    1/2000 | Lines:    0 (Avg50:   0.0) | Score:      0 | Steps:   23 | Reward:  -155.0 | Loss: 0.0000 | Eps: 0.999 | Time:   0.0s
+>>> [NEW RECORD] Episode 18: Cleared 2 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep   50/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   26 | Reward:  -153.0 | Loss: 7.8176 | Eps: 0.958 | Time:   5.0s
+Ep  100/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   24 | Reward:  -153.2 | Loss: 6.9859 | Eps: 0.917 | Time:  11.8s
+Ep  150/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   29 | Reward:  -140.8 | Loss: 5.3422 | Eps: 0.875 | Time:  18.9s
+Ep  200/2000 | Lines:    0 (Avg50:   0.3) | Score:      0 | Steps:   27 | Reward:  -150.5 | Loss: 4.5824 | Eps: 0.834 | Time:  26.6s
+Ep  250/2000 | Lines:    0 (Avg50:   0.3) | Score:      0 | Steps:   27 | Reward:  -149.2 | Loss: 5.1359 | Eps: 0.792 | Time:  34.8s
+Ep  300/2000 | Lines:    0 (Avg50:   0.4) | Score:      0 | Steps:   24 | Reward:  -160.8 | Loss: 5.9422 | Eps: 0.750 | Time:  43.2s
+Ep  350/2000 | Lines:    1 (Avg50:   0.3) | Score:     40 | Steps:   27 | Reward:  -138.8 | Loss: 8.2449 | Eps: 0.709 | Time:  51.6s
+>>> [NEW RECORD] Episode 378: Cleared 3 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep  400/2000 | Lines:    0 (Avg50:   0.3) | Score:      0 | Steps:   30 | Reward:  -132.5 | Loss: 5.9174 | Eps: 0.667 | Time:  59.0s
+Ep  450/2000 | Lines:    1 (Avg50:   0.5) | Score:     40 | Steps:   30 | Reward:  -127.0 | Loss: 4.7655 | Eps: 0.625 | Time:  66.6s
+>>> [NEW RECORD] Episode 459: Cleared 5 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 464: Cleared 6 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep  500/2000 | Lines:    5 (Avg50:   0.9) | Score:    200 | Steps:   42 | Reward:   -72.8 | Loss: 5.4636 | Eps: 0.584 | Time:  74.5s
+Ep  550/2000 | Lines:    1 (Avg50:   0.9) | Score:     40 | Steps:   36 | Reward:  -102.0 | Loss: 4.3525 | Eps: 0.542 | Time:  83.4s
+>>> [NEW RECORD] Episode 596: Cleared 7 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep  600/2000 | Lines:    3 (Avg50:   1.6) | Score:    120 | Steps:   42 | Reward:   -77.5 | Loss: 5.4035 | Eps: 0.500 | Time:  93.2s
+>>> [NEW RECORD] Episode 624: Cleared 9 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep  650/2000 | Lines:    4 (Avg50:   2.0) | Score:    160 | Steps:   46 | Reward:   -61.0 | Loss: 5.7003 | Eps: 0.459 | Time: 103.4s
+Ep  700/2000 | Lines:    5 (Avg50:   2.0) | Score:    220 | Steps:   51 | Reward:   -16.8 | Loss: 5.4999 | Eps: 0.417 | Time: 113.6s
+>>> [NEW RECORD] Episode 711: Cleared 11 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep  750/2000 | Lines:    5 (Avg50:   3.1) | Score:    200 | Steps:   52 | Reward:   -35.5 | Loss: 5.9875 | Eps: 0.376 | Time: 125.2s
+>>> [NEW RECORD] Episode 758: Cleared 13 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep  800/2000 | Lines:    4 (Avg50:   3.8) | Score:    180 | Steps:   49 | Reward:   -31.8 | Loss: 8.1875 | Eps: 0.334 | Time: 137.6s
+Ep  850/2000 | Lines:    4 (Avg50:   3.5) | Score:    160 | Steps:   46 | Reward:   -64.0 | Loss: 7.2881 | Eps: 0.292 | Time: 149.6s
+>>> [NEW RECORD] Episode 863: Cleared 14 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 894: Cleared 16 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep  900/2000 | Lines:   12 (Avg50:   7.4) | Score:    500 | Steps:   72 | Reward:    78.2 | Loss: 8.0469 | Eps: 0.251 | Time: 164.9s
+>>> [NEW RECORD] Episode 913: Cleared 17 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 917: Cleared 18 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 922: Cleared 21 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 940: Cleared 31 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep  950/2000 | Lines:    5 (Avg50:   9.7) | Score:    220 | Steps:   53 | Reward:   -10.5 | Loss: 8.4379 | Eps: 0.209 | Time: 181.9s
+>>> [NEW RECORD] Episode 961: Cleared 34 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep 1000/2000 | Lines:    8 (Avg50:  14.7) | Score:    360 | Steps:   58 | Reward:    38.2 | Loss: 8.3930 | Eps: 0.167 | Time: 202.7s
+>>> [NEW RECORD] Episode 1010: Cleared 41 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 1038: Cleared 43 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 1047: Cleared 86 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep 1050/2000 | Lines:   21 (Avg50:  20.3) | Score:    920 | Steps:   96 | Reward:   259.5 | Loss: 7.3445 | Eps: 0.126 | Time: 227.6s
+>>> [NEW RECORD] Episode 1067: Cleared 121 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 1085: Cleared 127 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep 1100/2000 | Lines:   12 (Avg50:  50.4) | Score:    480 | Steps:   71 | Reward:    62.2 | Loss: 6.2469 | Eps: 0.084 | Time: 273.6s
+>>> [NEW RECORD] Episode 1109: Cleared 180 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 1116: Cleared 193 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 1134: Cleared 262 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 1138: Cleared 384 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep 1150/2000 | Lines:   15 (Avg50:  94.2) | Score:    640 | Steps:   77 | Reward:   143.5 | Loss: 5.3124 | Eps: 0.043 | Time: 350.7s
+>>> [NEW RECORD] Episode 1158: Cleared 597 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 1168: Cleared 598 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+>>> [NEW RECORD] Episode 1187: Cleared 599 lines! Saved to /kaggle/working/results_reward/checkpoints/holes_half_s2/best_model.pth
+Ep 1200/2000 | Lines:  598 (Avg50: 469.5) | Score:  32460 | Steps: 1500 | Reward: 11687.0 | Loss: 3.5911 | Eps: 0.001 | Time: 691.9s
+Ep 1250/2000 | Lines:  599 (Avg50: 589.4) | Score:  36460 | Steps: 1500 | Reward: 12542.0 | Loss: 3.6673 | Eps: 0.001 | Time: 1112.5s
+Ep 1300/2000 | Lines:  596 (Avg50: 596.7) | Score:  33720 | Steps: 1500 | Reward: 12275.0 | Loss: 3.8588 | Eps: 0.001 | Time: 1542.3s
+Ep 1350/2000 | Lines:  594 (Avg50: 586.4) | Score:  39840 | Steps: 1500 | Reward: 12803.0 | Loss: 4.0485 | Eps: 0.001 | Time: 1958.4s
+Ep 1400/2000 | Lines:  597 (Avg50: 593.9) | Score:  31640 | Steps: 1500 | Reward: 12010.8 | Loss: 4.0270 | Eps: 0.001 | Time: 2382.3s
+Ep 1450/2000 | Lines:  597 (Avg50: 595.1) | Score:  40240 | Steps: 1500 | Reward: 13690.5 | Loss: 4.4150 | Eps: 0.001 | Time: 2808.5s
+Ep 1500/2000 | Lines:  591 (Avg50: 584.3) | Score:  46020 | Steps: 1500 | Reward: 14054.2 | Loss: 4.6924 | Eps: 0.001 | Time: 3224.8s
+Ep 1550/2000 | Lines:  594 (Avg50: 584.8) | Score:  40140 | Steps: 1500 | Reward: 13500.2 | Loss: 4.8858 | Eps: 0.001 | Time: 3644.0s
+Ep 1600/2000 | Lines:  593 (Avg50: 575.0) | Score:  39840 | Steps: 1500 | Reward: 13386.2 | Loss: 4.9165 | Eps: 0.001 | Time: 4057.4s
+Ep 1650/2000 | Lines:  592 (Avg50: 556.0) | Score:  36780 | Steps: 1500 | Reward: 13508.2 | Loss: 4.8344 | Eps: 0.001 | Time: 4450.7s
+Ep 1700/2000 | Lines:  592 (Avg50: 542.1) | Score:  41680 | Steps: 1500 | Reward: 13850.8 | Loss: 4.8441 | Eps: 0.001 | Time: 4841.5s
+Ep 1750/2000 | Lines:  592 (Avg50: 533.1) | Score:  40760 | Steps: 1500 | Reward: 13726.5 | Loss: 4.6624 | Eps: 0.001 | Time: 5231.7s
+Ep 1800/2000 | Lines:  596 (Avg50: 565.0) | Score:  39820 | Steps: 1500 | Reward: 13691.5 | Loss: 5.1142 | Eps: 0.001 | Time: 5637.7s
+Ep 1850/2000 | Lines:  598 (Avg50: 525.2) | Score:  43540 | Steps: 1500 | Reward: 14045.5 | Loss: 4.8073 | Eps: 0.001 | Time: 6019.4s
+Ep 1900/2000 | Lines:  598 (Avg50: 573.3) | Score:  39100 | Steps: 1500 | Reward: 13326.0 | Loss: 4.7521 | Eps: 0.001 | Time: 6428.3s
+Ep 1950/2000 | Lines:  596 (Avg50: 577.7) | Score:  46620 | Steps: 1500 | Reward: 14295.8 | Loss: 4.7743 | Eps: 0.001 | Time: 6834.9s
+Ep 2000/2000 | Lines:  594 (Avg50: 588.6) | Score:  36480 | Steps: 1500 | Reward: 13001.2 | Loss: 4.8116 | Eps: 0.001 | Time: 7246.7s
+=================================================================
+SUCCESS: TRAINING FINISHED!
+Best Lines Achieved: 599
+Latest checkpoint saved at: /kaggle/working/results_reward/checkpoints/holes_half_s2/latest_model.pth
+=================================================================

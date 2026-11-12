@@ -1,0 +1,73 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1794006426.922473     383 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+TensorBoard logging enabled: /kaggle/working/results_reward/logs/lines_only_s2
+=================================================================
+>>> STARTING TETRIS DEEP Q-NETWORK TRAINING
+Device: cpu | Total Episodes: 2000
+Batch Size: 512 | LR: 0.001 | Gamma: 0.99
+Checkpoints: /kaggle/working/results_reward/checkpoints/lines_only_s2 | Logs: /kaggle/working/results_reward/logs/lines_only_s2
+Reward weights: {'alive': 1.0, 'lines': 10.0, 'holes': 0.0, 'bumpiness': 0.0, 'height': 0.0, 'game_over_penalty': 10.0}
+=================================================================
+Ep    1/2000 | Lines:    0 (Avg50:   0.0) | Score:      0 | Steps:   23 | Reward:    13.0 | Loss: 0.0000 | Eps: 0.999 | Time:   0.0s
+>>> [NEW RECORD] Episode 18: Cleared 2 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep   50/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   24 | Reward:    14.0 | Loss: 6.4754 | Eps: 0.958 | Time:   4.7s
+Ep  100/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   22 | Reward:    12.0 | Loss: 4.8550 | Eps: 0.917 | Time:  11.1s
+Ep  150/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   25 | Reward:    15.0 | Loss: 5.2111 | Eps: 0.875 | Time:  17.3s
+Ep  200/2000 | Lines:    0 (Avg50:   0.0) | Score:      0 | Steps:   17 | Reward:     7.0 | Loss: 6.8797 | Eps: 0.834 | Time:  23.3s
+Ep  250/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   28 | Reward:    18.0 | Loss: 7.5244 | Eps: 0.792 | Time:  29.6s
+>>> [NEW RECORD] Episode 273: Cleared 4 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep  300/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   24 | Reward:    14.0 | Loss: 7.5290 | Eps: 0.750 | Time:  35.7s
+Ep  350/2000 | Lines:    1 (Avg50:   0.1) | Score:     40 | Steps:   27 | Reward:    27.0 | Loss: 7.5341 | Eps: 0.709 | Time:  42.2s
+Ep  400/2000 | Lines:    0 (Avg50:   0.1) | Score:      0 | Steps:   21 | Reward:    11.0 | Loss: 8.2366 | Eps: 0.667 | Time:  48.5s
+Ep  450/2000 | Lines:    0 (Avg50:   0.3) | Score:      0 | Steps:   32 | Reward:    22.0 | Loss: 7.4538 | Eps: 0.625 | Time:  55.8s
+Ep  500/2000 | Lines:    0 (Avg50:   0.7) | Score:      0 | Steps:   24 | Reward:    14.0 | Loss: 3.9726 | Eps: 0.584 | Time:  64.0s
+Ep  550/2000 | Lines:    1 (Avg50:   1.1) | Score:     40 | Steps:   32 | Reward:    32.0 | Loss: 3.9086 | Eps: 0.542 | Time:  72.8s
+>>> [NEW RECORD] Episode 561: Cleared 5 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep  600/2000 | Lines:    0 (Avg50:   1.4) | Score:      0 | Steps:   31 | Reward:    21.0 | Loss: 4.8864 | Eps: 0.500 | Time:  82.2s
+Ep  650/2000 | Lines:    0 (Avg50:   0.5) | Score:      0 | Steps:   36 | Reward:    26.0 | Loss: 5.6471 | Eps: 0.459 | Time:  91.6s
+Ep  700/2000 | Lines:    0 (Avg50:   0.7) | Score:      0 | Steps:   40 | Reward:    30.0 | Loss: 6.1535 | Eps: 0.417 | Time: 101.3s
+Ep  750/2000 | Lines:    2 (Avg50:   0.8) | Score:    100 | Steps:   43 | Reward:    73.0 | Loss: 7.1377 | Eps: 0.376 | Time: 110.9s
+Ep  800/2000 | Lines:    2 (Avg50:   0.7) | Score:     80 | Steps:   42 | Reward:    52.0 | Loss: 9.2962 | Eps: 0.334 | Time: 120.7s
+Ep  850/2000 | Lines:    3 (Avg50:   0.7) | Score:    120 | Steps:   44 | Reward:    64.0 | Loss: 11.8999 | Eps: 0.292 | Time: 130.7s
+>>> [NEW RECORD] Episode 873: Cleared 10 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep  900/2000 | Lines:    0 (Avg50:   1.4) | Score:      0 | Steps:   39 | Reward:    29.0 | Loss: 13.8178 | Eps: 0.251 | Time: 141.2s
+Ep  950/2000 | Lines:    0 (Avg50:   1.2) | Score:      0 | Steps:   41 | Reward:    31.0 | Loss: 17.9093 | Eps: 0.209 | Time: 152.0s
+Ep 1000/2000 | Lines:    0 (Avg50:   1.3) | Score:      0 | Steps:   41 | Reward:    31.0 | Loss: 20.7302 | Eps: 0.167 | Time: 162.7s
+Ep 1050/2000 | Lines:    1 (Avg50:   1.6) | Score:     40 | Steps:   44 | Reward:    44.0 | Loss: 24.2280 | Eps: 0.126 | Time: 173.7s
+>>> [NEW RECORD] Episode 1085: Cleared 18 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep 1100/2000 | Lines:    0 (Avg50:   2.9) | Score:      0 | Steps:   41 | Reward:    31.0 | Loss: 24.8736 | Eps: 0.084 | Time: 185.9s
+Ep 1150/2000 | Lines:    1 (Avg50:   3.2) | Score:     40 | Steps:   43 | Reward:    43.0 | Loss: 26.9181 | Eps: 0.043 | Time: 198.7s
+>>> [NEW RECORD] Episode 1181: Cleared 42 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep 1200/2000 | Lines:   29 (Avg50:   9.3) | Score:   2360 | Steps:  113 | Reward:   673.0 | Loss: 23.3371 | Eps: 0.001 | Time: 215.5s
+>>> [NEW RECORD] Episode 1202: Cleared 52 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+>>> [NEW RECORD] Episode 1205: Cleared 55 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+>>> [NEW RECORD] Episode 1207: Cleared 93 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+>>> [NEW RECORD] Episode 1209: Cleared 115 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+>>> [NEW RECORD] Episode 1214: Cleared 128 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+>>> [NEW RECORD] Episode 1216: Cleared 362 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+>>> [NEW RECORD] Episode 1226: Cleared 520 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep 1250/2000 | Lines:   95 (Avg50: 123.9) | Score:   7700 | Steps:  278 | Reward:  2438.0 | Loss: 12.8501 | Eps: 0.001 | Time: 310.0s
+>>> [NEW RECORD] Episode 1276: Cleared 592 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+>>> [NEW RECORD] Episode 1291: Cleared 596 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+>>> [NEW RECORD] Episode 1293: Cleared 598 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep 1300/2000 | Lines:  438 (Avg50: 185.0) | Score:  32360 | Steps: 1134 | Reward: 10664.0 | Loss: 8.1934 | Eps: 0.001 | Time: 454.3s
+Ep 1350/2000 | Lines:  594 (Avg50: 373.9) | Score:  42220 | Steps: 1500 | Reward: 13900.0 | Loss: 6.6656 | Eps: 0.001 | Time: 725.4s
+>>> [NEW RECORD] Episode 1368: Cleared 599 lines! Saved to /kaggle/working/results_reward/checkpoints/lines_only_s2/best_model.pth
+Ep 1400/2000 | Lines:  596 (Avg50: 455.2) | Score:  43780 | Steps: 1500 | Reward: 14240.0 | Loss: 6.6107 | Eps: 0.001 | Time: 1046.1s
+Ep 1450/2000 | Lines:  598 (Avg50: 546.2) | Score:  43280 | Steps: 1500 | Reward: 13960.0 | Loss: 6.2160 | Eps: 0.001 | Time: 1429.0s
+Ep 1500/2000 | Lines:  594 (Avg50: 571.2) | Score:  48740 | Steps: 1500 | Reward: 14260.0 | Loss: 6.8195 | Eps: 0.001 | Time: 1843.4s
+Ep 1550/2000 | Lines:  313 (Avg50: 541.3) | Score:  22620 | Steps:  816 | Reward:  7276.0 | Loss: 6.2965 | Eps: 0.001 | Time: 2218.6s
+Ep 1600/2000 | Lines:  597 (Avg50: 532.6) | Score:  49720 | Steps: 1500 | Reward: 15190.0 | Loss: 7.1337 | Eps: 0.001 | Time: 2594.0s
+Ep 1650/2000 | Lines:  179 (Avg50: 540.4) | Score:   9960 | Steps:  489 | Reward:  3989.0 | Loss: 7.0654 | Eps: 0.001 | Time: 2959.7s
+Ep 1700/2000 | Lines:  595 (Avg50: 536.7) | Score:  49020 | Steps: 1500 | Reward: 14710.0 | Loss: 6.6592 | Eps: 0.001 | Time: 3241.8s
+Ep 1750/2000 | Lines:  591 (Avg50: 538.6) | Score:  51440 | Steps: 1500 | Reward: 14890.0 | Loss: 6.4449 | Eps: 0.001 | Time: 3467.2s
+Ep 1800/2000 | Lines:  172 (Avg50: 476.6) | Score:  18620 | Steps:  472 | Reward:  4762.0 | Loss: 7.6041 | Eps: 0.001 | Time: 3678.4s
+Ep 1850/2000 | Lines:  592 (Avg50: 416.4) | Score:  45700 | Steps: 1500 | Reward: 14720.0 | Loss: 6.9974 | Eps: 0.001 | Time: 3866.1s
+Ep 1900/2000 | Lines:  503 (Avg50: 336.5) | Score:  56300 | Steps: 1301 | Reward: 14061.0 | Loss: 6.6761 | Eps: 0.001 | Time: 4012.3s
+Ep 1950/2000 | Lines:    2 (Avg50: 172.4) | Score:    100 | Steps:   35 | Reward:    65.0 | Loss: 7.8775 | Eps: 0.001 | Time: 4088.5s
+Ep 2000/2000 | Lines:    0 (Avg50:   2.5) | Score:      0 | Steps:   16 | Reward:     6.0 | Loss: 11.8926 | Eps: 0.001 | Time: 4093.1s
+=================================================================
+SUCCESS: TRAINING FINISHED!
+Best Lines Achieved: 599
+Latest checkpoint saved at: /kaggle/working/results_reward/checkpoints/lines_only_s2/latest_model.pth
+=================================================================

@@ -1,0 +1,25 @@
+=================================================================
+STARTING BENCHMARK EVALUATION (100 games/agent, max 1000 placements, seed 0)
+=================================================================
+
+Evaluating: Random Baseline (Demaine 2002)...
+
+Evaluating: Naive Greedy (Fahey 2003)...
+
+Evaluating: Proposed DDQN Agent...
+
+Evaluating: Expert Heuristic (Dellacherie 2003)...
+
+==========================================================================================================================
+TABLE 1 – BENCHMARK
+==========================================================================================================================
+Agent                                | Lines (Mean ± Std) |  Median |   Max | Mean Score | Placements | Pts/Line |     Cap
+--------------------------------------------------------------------------------------------------------------------------
+Random Baseline (Demaine 2002)       | 0.1 ± 0.4          |     0.0 |     2 |        6.0 |       25.8 |     40.0 |   0/100
+Naive Greedy (Fahey 2003)            | 16.5 ± 9.7         |    16.0 |    46 |      926.2 |       79.9 |     56.1 |   0/100
+Proposed DDQN Agent                  | 266.8 ± 123.1      |   295.5 |   397|     21594.6 |      701.5 |     80.9 |  37/100
+Expert Heuristic (Dellacherie 2003)  | 388.3 ± 34.5       |   396.0 |   399 |    17139.0 |      982.9 |     44.1 |  94/100
+==========================================================================================================================
+
+Results successfully saved to: reports/table1\benchmark_results.json
+Comparison chart saved to: reports/table1\benchmark_comparison.png
